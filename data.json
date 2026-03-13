@@ -1,0 +1,178 @@
+{
+  "synced_at": "2026-03-13T02:04:04.268386+00:00",
+  "youtube": {
+    "subscribers": 25100,
+    "views": 4377890,
+    "videos": 9,
+    "channel_id": "UCgqus_DBpRevUyITHaOOrag",
+    "channel_name": "Wilder World",
+    "synced_at": "2026-03-13T02:04:04.836214+00:00",
+    "recent_videos": [
+      {
+        "title": "Welcome to the future of gaming.",
+        "views": 305,
+        "likes": 11,
+        "comments": 0,
+        "published": "2025-10-28T16:58:09Z"
+      },
+      {
+        "title": "This is what happens when reality and gaming collide.",
+        "views": 572,
+        "likes": 43,
+        "comments": 0,
+        "published": "2025-10-22T17:26:17Z"
+      },
+      {
+        "title": "Super Early Access is now LIVE",
+        "views": 1835,
+        "likes": 20,
+        "comments": 1,
+        "published": "2025-10-17T18:48:58Z"
+      },
+      {
+        "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
+        "views": 3333209,
+        "likes": 19962,
+        "comments": 7975,
+        "published": "2024-12-22T00:00:06Z"
+      },
+      {
+        "title": "Midnight in Wiami - Wilder World Teaser",
+        "views": 103541,
+        "likes": 3518,
+        "comments": 1797,
+        "published": "2024-11-21T20:11:33Z"
+      }
+    ],
+    "recent_views_total": 3439462,
+    "top_video_views": 3333209
+  },
+  "tiktok": {
+    "followers": 7808,
+    "likes": 77800,
+    "videos": 123,
+    "following": 393,
+    "verified": false,
+    "username": "Wilder World",
+    "synced_at": "2026-03-13T02:04:20.196017+00:00"
+  },
+  "x": {
+    "followers": 249892,
+    "following": 958,
+    "tweets": 43126,
+    "likes": 160513,
+    "listed": 965,
+    "verified": false,
+    "username": "WilderWorld",
+    "name": "Wilder World",
+    "synced_at": "2026-03-13T02:04:27.523420+00:00"
+  },
+  "instagram": {
+    "followers": 167947,
+    "following": 485,
+    "posts": 636,
+    "verified": true,
+    "username": "wilder.world",
+    "fullName": "Wilder World",
+    "synced_at": "2026-03-13T02:04:34.217576+00:00"
+  },
+  "dau": {
+    "today": 95,
+    "history": {
+      "2026.03.06": 2396,
+      "2026.03.07": 1076,
+      "2026.03.08": 480,
+      "2026.03.09": 2336,
+      "2026.03.10": 3263,
+      "2026.03.11": 176,
+      "2026.03.12": 95
+    },
+    "synced_at": "2026-03-13T02:04:36.067883+00:00"
+  },
+  "pack_sales": {
+    "error": "server offline",
+    "synced_at": "2026-03-13T02:04:46.071258+00:00"
+  },
+  "ga": {
+    "today": {
+      "sessions": 1694,
+      "users": 1304,
+      "new_users": 1225,
+      "pageviews": 1852,
+      "bounce_rate": 57.1,
+      "avg_session": 118.0
+    },
+    "week": {
+      "sessions": 91,
+      "users": 77,
+      "new_users": 63,
+      "pageviews": 101,
+      "bounce_rate": 56.0,
+      "avg_session": 138.5
+    },
+    "synced_at": "2026-03-13T02:04:47.332832+00:00"
+  },
+  "email": {},
+  "history": {
+    "tt": [
+      7783,
+      7783,
+      7783,
+      7834,
+      7790,
+      7845,
+      7801,
+      7806,
+      7807,
+      7807,
+      7808,
+      7808,
+      7808,
+      7808
+    ],
+    "ig": [],
+    "x": [
+      250085,
+      250085,
+      250084,
+      250087,
+      250088,
+      250089,
+      249942,
+      249963,
+      249853,
+      249872,
+      249878,
+      249874,
+      249874,
+      249874,
+      249892
+    ],
+    "yt": [
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100
+    ],
+    "dau": [
+      97,
+      100,
+      100,
+      100,
+      95
+    ]
+  }
+}
