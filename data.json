@@ -1,116 +1,101 @@
 {
-  "synced_at": "2026-03-13T02:04:04.268386+00:00",
+  "synced_at": "2026-03-14T22:00:00.893780+00:00",
   "youtube": {
     "subscribers": 25100,
-    "views": 4377890,
+    "views": 4378010,
     "videos": 9,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-13T02:04:04.836214+00:00",
+    "synced_at": "2026-03-14T22:00:01.769991+00:00",
     "recent_videos": [
       {
         "title": "Welcome to the future of gaming.",
-        "views": 305,
+        "views": 309,
         "likes": 11,
         "comments": 0,
         "published": "2025-10-28T16:58:09Z"
       },
       {
         "title": "This is what happens when reality and gaming collide.",
-        "views": 572,
+        "views": 576,
         "likes": 43,
         "comments": 0,
         "published": "2025-10-22T17:26:17Z"
       },
       {
         "title": "Super Early Access is now LIVE",
-        "views": 1835,
+        "views": 1850,
         "likes": 20,
         "comments": 1,
         "published": "2025-10-17T18:48:58Z"
       },
       {
         "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
-        "views": 3333209,
-        "likes": 19962,
+        "views": 3333300,
+        "likes": 19961,
         "comments": 7975,
         "published": "2024-12-22T00:00:06Z"
       },
       {
         "title": "Midnight in Wiami - Wilder World Teaser",
-        "views": 103541,
+        "views": 103542,
         "likes": 3518,
         "comments": 1797,
         "published": "2024-11-21T20:11:33Z"
       }
     ],
-    "recent_views_total": 3439462,
-    "top_video_views": 3333209
+    "recent_views_total": 3439577,
+    "top_video_views": 3333300
   },
   "tiktok": {
-    "followers": 7808,
-    "likes": 77800,
-    "videos": 123,
+    "followers": 7824,
+    "likes": 78100,
+    "videos": 124,
     "following": 393,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-13T02:04:20.196017+00:00"
+    "synced_at": "2026-03-14T22:00:17.814168+00:00"
   },
   "x": {
-    "followers": 249892,
+    "followers": 249838,
     "following": 958,
     "tweets": 43126,
-    "likes": 160513,
-    "listed": 965,
+    "likes": 160536,
+    "listed": 962,
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-13T02:04:27.523420+00:00"
+    "synced_at": "2026-03-14T22:00:25.032593+00:00"
   },
   "instagram": {
-    "followers": 167947,
+    "followers": 167922,
     "following": 485,
     "posts": 636,
     "verified": true,
     "username": "wilder.world",
     "fullName": "Wilder World",
-    "synced_at": "2026-03-13T02:04:34.217576+00:00"
+    "synced_at": "2026-03-14T22:00:32.241416+00:00"
   },
   "dau": {
-    "today": 95,
+    "today": 69,
     "history": {
-      "2026.03.06": 2396,
-      "2026.03.07": 1076,
       "2026.03.08": 480,
       "2026.03.09": 2336,
       "2026.03.10": 3263,
       "2026.03.11": 176,
-      "2026.03.12": 95
+      "2026.03.12": 95,
+      "2026.03.13": 94,
+      "2026.03.14": 69
     },
-    "synced_at": "2026-03-13T02:04:36.067883+00:00"
+    "synced_at": "2026-03-14T22:00:34.198958+00:00"
   },
   "pack_sales": {
     "error": "server offline",
-    "synced_at": "2026-03-13T02:04:46.071258+00:00"
+    "synced_at": "2026-03-14T22:00:44.201999+00:00"
   },
   "ga": {
-    "today": {
-      "sessions": 1694,
-      "users": 1304,
-      "new_users": 1225,
-      "pageviews": 1852,
-      "bounce_rate": 57.1,
-      "avg_session": 118.0
-    },
-    "week": {
-      "sessions": 91,
-      "users": 77,
-      "new_users": 63,
-      "pageviews": 101,
-      "bounce_rate": 56.0,
-      "avg_session": 138.5
-    },
-    "synced_at": "2026-03-13T02:04:47.332832+00:00"
+    "error": "No module named 'cryptography'",
+    "synced_at": "2026-03-14T22:00:44.205140+00:00"
   },
   "email": {},
   "history": {
@@ -128,7 +113,13 @@
       7808,
       7808,
       7808,
-      7808
+      7808,
+      7808,
+      7862,
+      7814,
+      7866,
+      7872,
+      7824
     ],
     "ig": [],
     "x": [
@@ -146,9 +137,21 @@
       249874,
       249874,
       249874,
-      249892
+      249892,
+      249894,
+      249875,
+      249865,
+      249887,
+      249804,
+      249838
     ],
     "yt": [
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
+      25100,
       25100,
       25100,
       25100,
@@ -172,7 +175,13 @@
       100,
       100,
       100,
-      95
+      95,
+      95,
+      74,
+      91,
+      94,
+      57,
+      69
     ]
   }
 }
