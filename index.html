@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){
+  const pwd = sessionStorage.getItem('ww_auth');
+  if(pwd !== 'ww_ok'){
+    const input = prompt('WILDER WORLD — ENTER ACCESS CODE');
+    if(input !== '1'){ document.write('<body style="background:#000;color:#FF2D87;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;font-size:20px;letter-spacing:4px;">ACCESS DENIED</body>'); document.close(); }
+    else { sessionStorage.setItem('ww_auth','ww_ok'); }
+  }
+})();
+</script>
 <title>WILDER WORLD — COMMAND CENTER</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&display=swap');
