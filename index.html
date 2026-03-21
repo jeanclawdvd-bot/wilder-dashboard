@@ -387,25 +387,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
       </div>
     </div>
 
-    <!-- FOLLOWER SUMMARY ROW -->
-    <div class="funnel-secondary">
-      <div class="funnel-sec-card" style="--fc:var(--yt)">
-        <div class="funnel-sec-val" style="color:var(--yt)" id="fn-yt-subs">—</div>
-        <div class="funnel-sec-lbl">YouTube Subs</div>
-      </div>
-      <div class="funnel-sec-card" style="--fc:var(--tiktok)">
-        <div class="funnel-sec-val" style="color:var(--tiktok)" id="fn-tt-followers">—</div>
-        <div class="funnel-sec-lbl">TikTok Followers</div>
-      </div>
-      <div class="funnel-sec-card" style="--fc:var(--ig)">
-        <div class="funnel-sec-val" style="color:var(--ig)" id="fn-ig-followers">—</div>
-        <div class="funnel-sec-lbl">Instagram Followers</div>
-      </div>
-      <div class="funnel-sec-card" style="--fc:var(--x)">
-        <div class="funnel-sec-val" style="color:var(--x)" id="fn-x-followers">—</div>
-        <div class="funnel-sec-lbl">X Followers</div>
-      </div>
-    </div>
+
 
     <!-- DAU + PACKS + Z CHAIN -->
     <div class="bottom-grid" style="margin-bottom:16px">
@@ -496,21 +478,43 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
           </div>
         </div>
       </div>
-      <div class="panel">
-        <div class="panel-title">YouTube</div>
-        <div class="panel-sub">// CHANNEL STATS</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-          <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--yt)" id="yt-views">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIEWS</div>
+      <!-- YouTube + Followers side by side -->
+      <div style="display:grid;grid-template-columns:1fr auto;gap:10px;align-items:stretch">
+        <div class="panel" style="margin:0">
+          <div class="panel-title">YouTube</div>
+          <div class="panel-sub">// CHANNEL STATS</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+            <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--yt)" id="yt-views">—</div>
+              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIEWS</div>
+            </div>
+            <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--orange)" id="yt-videos-count">—</div>
+              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIDEOS</div>
+            </div>
           </div>
-          <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--orange)" id="yt-videos-count">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIDEOS</div>
+          <div class="panel-sub">// RECENT UPLOADS</div>
+          <div class="yt-videos" id="yt-recent"></div>
+        </div>
+        <!-- 2x2 Follower Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;min-width:220px">
+          <div class="funnel-sec-card" style="--fc:var(--yt);margin:0">
+            <div class="funnel-sec-val" style="color:var(--yt)" id="fn-yt-subs">—</div>
+            <div class="funnel-sec-lbl">YouTube Subs</div>
+          </div>
+          <div class="funnel-sec-card" style="--fc:var(--tiktok);margin:0">
+            <div class="funnel-sec-val" style="color:var(--tiktok)" id="fn-tt-followers">—</div>
+            <div class="funnel-sec-lbl">TikTok Followers</div>
+          </div>
+          <div class="funnel-sec-card" style="--fc:var(--ig);margin:0">
+            <div class="funnel-sec-val" style="color:var(--ig)" id="fn-ig-followers">—</div>
+            <div class="funnel-sec-lbl">Instagram Followers</div>
+          </div>
+          <div class="funnel-sec-card" style="--fc:var(--x);margin:0">
+            <div class="funnel-sec-val" style="color:var(--x)" id="fn-x-followers">—</div>
+            <div class="funnel-sec-lbl">X Followers</div>
           </div>
         </div>
-        <div class="panel-sub">// RECENT UPLOADS</div>
-        <div class="yt-videos" id="yt-recent"></div>
       </div>
     </div>
 
