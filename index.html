@@ -68,7 +68,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .tab{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:3px;padding:12px 20px;cursor:pointer;color:var(--text);border:1px solid transparent;border-bottom:none;margin-bottom:-1px;transition:all 0.2s;text-transform:uppercase;user-select:none;white-space:nowrap}
 .tab:hover{color:var(--orange)}
 .tab.active{color:var(--orange);background:var(--card);border-color:var(--border);border-bottom-color:var(--card)}
-.tab-content{display:none}
+.tab-content{display:none;overflow-x:hidden;max-width:100%}
 .tab-content.active{display:block}
 
 /* ── BOTTOM NAV — MOBILE ── */
@@ -271,13 +271,14 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--orange));box-shadow:0 0 8px var(--accent,var(--orange))}
 .kpi-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);letter-spacing:1px;line-height:1;color:var(--white);margin-bottom:3px}
 .kpi-lbl{font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--text);text-transform:uppercase}
-.ch-chart-panel{background:var(--card);border:1px solid var(--border);padding:18px;margin-bottom:18px;position:relative}
+.ch-chart-panel{background:var(--card);border:1px solid var(--border);padding:18px;margin-bottom:18px;position:relative;min-width:0}
 .ch-chart-panel::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--accent,var(--orange));border-right:1px solid var(--accent,var(--orange));opacity:0.25}
 .ch-chart-title{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;margin-bottom:14px;color:var(--white)}
 .ch-chart-wrap{position:relative;height:220px}
 @media(min-width:640px){.ch-chart-wrap{height:280px}}
 .ch-no-data{display:flex;align-items:center;justify-content:center;height:200px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:3px;flex-direction:column;gap:8px}
-.ch-secondary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.ch-secondary-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:18px}
+@media(min-width:640px){.ch-secondary-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:640px){.ch-secondary-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){.ch-secondary-grid{grid-template-columns:repeat(4,1fr)}}
 /* Platform accent overrides per tab */
