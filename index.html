@@ -550,7 +550,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div><div class="ch-name" style="color:var(--x)">X / TWITTER</div><div class="ch-handle">@WilderWorld</div></div>
       </div>
       <div class="range-btns" style="--accent:var(--x)">
-        <button class="range-btn active" onclick="setRange('x','7d',this)">7D</button>
+        <button class="range-btn active" onclick="setRange('x','1d',this)">1D</button>
+        <button class="range-btn" onclick="setRange('x','7d',this)">7D</button>
         <button class="range-btn" onclick="setRange('x','30d',this)">30D</button>
       </div>
     </div>
@@ -582,7 +583,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div><div class="ch-name" style="color:var(--ig)">Instagram</div><div class="ch-handle">@wilder.world</div></div>
       </div>
       <div class="range-btns" style="--accent:var(--ig)">
-        <button class="range-btn active" onclick="setRange('ig','7d',this)">7D</button>
+        <button class="range-btn active" onclick="setRange('ig','1d',this)">1D</button>
+        <button class="range-btn" onclick="setRange('ig','7d',this)">7D</button>
         <button class="range-btn" onclick="setRange('ig','30d',this)">30D</button>
       </div>
     </div>
@@ -614,7 +616,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div><div class="ch-name" style="color:var(--tiktok)">TikTok</div><div class="ch-handle">@wilder.world</div></div>
       </div>
       <div class="range-btns" style="--accent:var(--tiktok)">
-        <button class="range-btn active" onclick="setRange('tt','7d',this)">7D</button>
+        <button class="range-btn active" onclick="setRange('tt','1d',this)">1D</button>
+        <button class="range-btn" onclick="setRange('tt','7d',this)">7D</button>
         <button class="range-btn" onclick="setRange('tt','30d',this)">30D</button>
       </div>
     </div>
@@ -646,7 +649,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div><div class="ch-name" style="color:var(--yt)">YouTube</div><div class="ch-handle">Wilder World</div></div>
       </div>
       <div class="range-btns" style="--accent:var(--yt)">
-        <button class="range-btn active" onclick="setRange('yt','7d',this)">7D</button>
+        <button class="range-btn active" onclick="setRange('yt','1d',this)">1D</button>
+        <button class="range-btn" onclick="setRange('yt','7d',this)">7D</button>
         <button class="range-btn" onclick="setRange('yt','30d',this)">30D</button>
       </div>
     </div>
@@ -679,8 +683,9 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div><div class="ch-name" style="color:var(--orange)">Website</div><div class="ch-handle">wilderworld.com — GA4</div></div>
       </div>
       <div class="range-btns" style="--accent:var(--orange)">
-        <button class="range-btn active" onclick="setRange('web','today',this)">TODAY</button>
+        <button class="range-btn active" onclick="setRange('web','1d',this)">1D</button>
         <button class="range-btn" onclick="setRange('web','7d',this)">7D</button>
+        <button class="range-btn" onclick="setRange('web','30d',this)">30D</button>
       </div>
     </div>
     <div class="ch-kpi-row" style="--accent:var(--orange)">
@@ -1143,7 +1148,7 @@ function switchTabMobile(name,btn){
 }
 
 /* ── CHANNEL RANGE STATE ── */
-const chRanges={x:'7d',ig:'7d',tt:'7d',yt:'7d',web:'today'};
+const chRanges={x:'1d',ig:'1d',tt:'1d',yt:'1d',web:'1d'};
 const chCharts={};
 
 function setRange(ch,range,btn){
@@ -1157,9 +1162,9 @@ function filterByRange(timeline,range){
   if(!timeline||!timeline.length) return [];
   const now=new Date();
   let cutoff=new Date(now);
-  if(range==='7d') cutoff.setDate(cutoff.getDate()-7);
+  if(range==='1d') cutoff.setDate(cutoff.getDate()-1);
+  else if(range==='7d') cutoff.setDate(cutoff.getDate()-7);
   else if(range==='30d') cutoff.setDate(cutoff.getDate()-30);
-  else if(range==='today') cutoff.setDate(cutoff.getDate()-1);
   else return timeline;
   const cutStr=cutoff.toISOString().slice(0,10);
   return timeline.filter(p=>p.date>=cutStr);
@@ -1311,8 +1316,7 @@ function renderChannelTab(ch){
   }
   else if(ch==='web'){
     const ga=state.platforms.ga||{};
-    const isToday=r==='today';
-    const d=isToday?(ga.today||{}):(ga.week||{});
+    const d=r==='1d'?(ga.today||{}):(r==='30d'?(ga.month||ga.week||{}):(ga.week||{}));
     document.getElementById('web-kpi-sessions').textContent=fmt(d.sessions||0);
     document.getElementById('web-kpi-users').textContent=fmt(d.users||0);
     document.getElementById('web-kpi-new').textContent=fmt(d.new_users||0);
@@ -1321,7 +1325,11 @@ function renderChannelTab(ch){
     const dur=d.avg_session||0;
     document.getElementById('web-kpi-duration').textContent=Math.floor(dur/60)+'m '+Math.round(dur%60)+'s';
     // Draw sessions chart from daily_history
-    const history = ga.daily_history||[];
+    const allHistory = ga.daily_history||[];
+    const cutoffDays = r==='1d'?1:r==='7d'?7:30;
+    const cutoffDate = new Date(); cutoffDate.setDate(cutoffDate.getDate()-cutoffDays);
+    const cutoffStr = cutoffDate.toISOString().slice(0,10);
+    const history = allHistory.filter(h=>h.date>=cutoffStr);
     const wrap = document.getElementById('web-chart-wrap');
     if(wrap && history.length > 0){
       wrap.innerHTML = '<canvas id="web-sessions-chart"></canvas>';
