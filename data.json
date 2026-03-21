@@ -1,16 +1,16 @@
 {
-  "synced_at": "2026-03-21T06:35:02.935939+00:00",
+  "synced_at": "2026-03-21T06:49:00.356461+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4378599,
     "videos": 10,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-21T06:34:31.056461+00:00",
+    "synced_at": "2026-03-21T06:48:24.474748+00:00",
     "recent_videos": [
       {
         "title": "Wiami never sleeps \ud83c\udf06 | Wilder World Super Early Access",
-        "views": 1018,
+        "views": 1052,
         "likes": 4,
         "comments": 0,
         "published": "2026-03-21T01:36:50Z"
@@ -42,44 +42,9 @@
         "likes": 19968,
         "comments": 7978,
         "published": "2024-12-22T00:00:06Z"
-      },
-      {
-        "title": "Midnight in Wiami - Wilder World Teaser",
-        "views": 103552,
-        "likes": 3517,
-        "comments": 1797,
-        "published": "2024-11-21T20:11:33Z"
-      },
-      {
-        "title": "Wilder World GENs Trailer",
-        "views": 38737,
-        "likes": 348,
-        "comments": 404,
-        "published": "2023-03-14T16:24:18Z"
-      },
-      {
-        "title": "Wilder World: Pre-Alpha Gameplay Teaser [4K, Ray Tracing, UE5]",
-        "views": 805165,
-        "likes": 3249,
-        "comments": 2306,
-        "published": "2023-02-01T02:30:08Z"
-      },
-      {
-        "title": "Wilder World Wapes Trailer",
-        "views": 92869,
-        "likes": 150,
-        "comments": 81,
-        "published": "2022-12-20T19:57:12Z"
-      },
-      {
-        "title": "Wilder Moto Teaser Trailer",
-        "views": 1742,
-        "likes": 80,
-        "comments": 23,
-        "published": "2022-06-27T13:56:53Z"
       }
     ],
-    "recent_views_total": 4379635,
+    "recent_views_total": 3337604,
     "top_video_views": 3333753
   },
   "tiktok": {
@@ -89,7 +54,7 @@
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T06:34:38.733705+00:00",
+    "synced_at": "2026-03-21T06:48:35.801986+00:00",
     "views": 0,
     "comments": 0,
     "shares": 0,
@@ -104,7 +69,7 @@
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T06:34:45.025566+00:00",
+    "synced_at": "2026-03-21T06:48:41.790995+00:00",
     "retweets": 5,
     "mentions": 0,
     "mc_followers": 0
@@ -116,7 +81,7 @@
     "verified": true,
     "username": "wilder.world",
     "fullName": "Wilder World",
-    "synced_at": "2026-03-21T06:34:49.812992+00:00",
+    "synced_at": "2026-03-21T06:48:47.124336+00:00",
     "impressions": 0,
     "reach": 0,
     "engagement": 0,
@@ -266,7 +231,7 @@
         ]
       }
     },
-    "synced_at": "2026-03-21T06:35:02.935844+00:00"
+    "synced_at": "2026-03-21T06:49:00.356365+00:00"
   },
   "dau": {
     "today": 34,
@@ -279,38 +244,124 @@
       "2026.03.19": 62,
       "2026.03.20": 34
     },
-    "synced_at": "2026-03-21T06:35:04.258855+00:00"
+    "synced_at": "2026-03-21T06:49:01.400887+00:00"
   },
   "pack_sales": {
-    "error": "server offline",
-    "synced_at": "2026-03-21T06:35:14.260912+00:00"
+    "today": 33,
+    "total_7d": 615,
+    "total_30d": 1936,
+    "total_burned_30d": 830,
+    "daily": [
+      {
+        "date": "2026-03-05",
+        "totalSold": 44,
+        "totalBurned": 108
+      },
+      {
+        "date": "2026-03-06",
+        "totalSold": 191,
+        "totalBurned": 68
+      },
+      {
+        "date": "2026-03-07",
+        "totalSold": 189,
+        "totalBurned": 124
+      },
+      {
+        "date": "2026-03-08",
+        "totalSold": 136,
+        "totalBurned": 35
+      },
+      {
+        "date": "2026-03-09",
+        "totalSold": 137,
+        "totalBurned": 44
+      },
+      {
+        "date": "2026-03-10",
+        "totalSold": 140,
+        "totalBurned": 45
+      },
+      {
+        "date": "2026-03-11",
+        "totalSold": 167,
+        "totalBurned": 114
+      },
+      {
+        "date": "2026-03-12",
+        "totalSold": 212,
+        "totalBurned": 76
+      },
+      {
+        "date": "2026-03-13",
+        "totalSold": 105,
+        "totalBurned": 45
+      },
+      {
+        "date": "2026-03-14",
+        "totalSold": 83,
+        "totalBurned": 17
+      },
+      {
+        "date": "2026-03-15",
+        "totalSold": 129,
+        "totalBurned": 37
+      },
+      {
+        "date": "2026-03-16",
+        "totalSold": 117,
+        "totalBurned": 66
+      },
+      {
+        "date": "2026-03-17",
+        "totalSold": 103,
+        "totalBurned": 11
+      },
+      {
+        "date": "2026-03-18",
+        "totalSold": 96,
+        "totalBurned": 10
+      },
+      {
+        "date": "2026-03-19",
+        "totalSold": 54,
+        "totalBurned": 10
+      },
+      {
+        "date": "2026-03-20",
+        "totalSold": 33,
+        "totalBurned": 10
+      }
+    ],
+    "source": "zchain",
+    "synced_at": "2026-03-21T06:49:36.220773+00:00"
   },
   "ga": {
     "today": {
-      "sessions": 199,
-      "users": 170,
-      "new_users": 138,
-      "pageviews": 224,
-      "bounce_rate": 48.7,
-      "avg_session": 119.0
+      "sessions": 200,
+      "users": 171,
+      "new_users": 139,
+      "pageviews": 225,
+      "bounce_rate": 48.5,
+      "avg_session": 118.9
     },
     "week": {
-      "sessions": 2791,
-      "users": 2404,
-      "new_users": 2279,
-      "pageviews": 3217,
+      "sessions": 2793,
+      "users": 2405,
+      "new_users": 2280,
+      "pageviews": 3218,
       "bounce_rate": 49.1,
       "avg_session": 122.8
     },
-    "synced_at": "2026-03-21T06:35:16.034256+00:00"
+    "synced_at": "2026-03-21T06:49:38.470115+00:00"
   },
   "zchain": {
     "total_transactions": 9738096,
     "transactions_today": 5974,
     "total_addresses": 27177,
-    "total_blocks": 20488482,
+    "total_blocks": 20489244,
     "gas_used_today": "356859935",
-    "avg_block_time_ms": 1071.0,
+    "avg_block_time_ms": 1040.0,
     "recent_txns": [
       {
         "hash": "0xeb97af7f744ed29fe1",
@@ -423,12 +474,11 @@
         "block": 20477245
       }
     ],
-    "synced_at": "2026-03-21T06:35:18.169218+00:00"
+    "synced_at": "2026-03-21T06:49:40.967203+00:00"
   },
   "email": {},
   "history": {
     "tt": [
-      7783,
       7834,
       7790,
       7845,
@@ -457,11 +507,11 @@
       8012,
       8064,
       8014,
+      8015,
       8015
     ],
     "ig": [],
     "x": [
-      249874,
       249874,
       249892,
       249894,
@@ -490,6 +540,7 @@
       249710,
       249710,
       249712,
+      249701,
       249701
     ],
     "yt": [
@@ -525,7 +576,6 @@
       25100
     ],
     "dau": [
-      91,
       94,
       57,
       69,
@@ -552,6 +602,7 @@
       45,
       45,
       45,
+      34,
       34,
       34,
       34
