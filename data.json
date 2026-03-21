@@ -1,12 +1,12 @@
 {
-  "synced_at": "2026-03-21T00:59:59.532221+00:00",
+  "synced_at": "2026-03-21T01:03:35.105398+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4378572,
     "videos": 9,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-21T00:57:15.725232+00:00",
+    "synced_at": "2026-03-21T01:02:38.241847+00:00",
     "recent_videos": [
       {
         "title": "Welcome to the future of gaming.",
@@ -42,9 +42,37 @@
         "likes": 3517,
         "comments": 1797,
         "published": "2024-11-21T20:11:33Z"
+      },
+      {
+        "title": "Wilder World GENs Trailer",
+        "views": 38736,
+        "likes": 348,
+        "comments": 404,
+        "published": "2023-03-14T16:24:18Z"
+      },
+      {
+        "title": "Wilder World: Pre-Alpha Gameplay Teaser [4K, Ray Tracing, UE5]",
+        "views": 805164,
+        "likes": 3249,
+        "comments": 2306,
+        "published": "2023-02-01T02:30:08Z"
+      },
+      {
+        "title": "Wilder World Wapes Trailer",
+        "views": 92868,
+        "likes": 150,
+        "comments": 81,
+        "published": "2022-12-20T19:57:12Z"
+      },
+      {
+        "title": "Wilder Moto Teaser Trailer",
+        "views": 1742,
+        "likes": 80,
+        "comments": 23,
+        "published": "2022-06-27T13:56:53Z"
       }
     ],
-    "recent_views_total": 3440093,
+    "recent_views_total": 4378603,
     "top_video_views": 3333745
   },
   "tiktok": {
@@ -54,7 +82,7 @@
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T00:57:23.726913+00:00",
+    "synced_at": "2026-03-21T01:02:53.466502+00:00",
     "views": 0,
     "comments": 0,
     "shares": 0,
@@ -69,14 +97,24 @@
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T00:57:32.592987+00:00",
+    "synced_at": "2026-03-21T01:03:04.184669+00:00",
     "retweets": 0,
     "mentions": 0,
     "mc_followers": 0
   },
   "instagram": {
-    "error": "The read operation timed out",
-    "synced_at": "2026-03-21T00:59:47.798593+00:00"
+    "followers": 167836,
+    "following": 485,
+    "posts": 637,
+    "verified": true,
+    "username": "wilder.world",
+    "fullName": "Wilder World",
+    "synced_at": "2026-03-21T01:03:23.360541+00:00",
+    "impressions": 0,
+    "reach": 0,
+    "engagement": 0,
+    "profile_views": 0,
+    "mc_followers": 0
   },
   "metricool": {
     "instagram": {
@@ -106,7 +144,7 @@
       "mentions": 0,
       "history": []
     },
-    "synced_at": "2026-03-21T00:59:59.532141+00:00"
+    "synced_at": "2026-03-21T01:03:35.105300+00:00"
   },
   "dau": {
     "today": 45,
@@ -119,30 +157,30 @@
       "2026.03.19": 62,
       "2026.03.20": 45
     },
-    "synced_at": "2026-03-21T01:00:01.001343+00:00"
+    "synced_at": "2026-03-21T01:03:36.426033+00:00"
   },
   "pack_sales": {
     "error": "server offline",
-    "synced_at": "2026-03-21T01:00:11.005824+00:00"
+    "synced_at": "2026-03-21T01:03:46.429128+00:00"
   },
   "ga": {
     "today": {
-      "sessions": 2891,
-      "users": 2486,
-      "new_users": 2364,
-      "pageviews": 3342,
-      "bounce_rate": 49.2,
-      "avg_session": 121.7
+      "sessions": 2893,
+      "users": 2487,
+      "new_users": 2365,
+      "pageviews": 3344,
+      "bounce_rate": 49.3,
+      "avg_session": 121.6
     },
     "week": {
-      "sessions": 136,
-      "users": 109,
-      "new_users": 89,
-      "pageviews": 150,
-      "bounce_rate": 52.9,
-      "avg_session": 125.5
+      "sessions": 138,
+      "users": 110,
+      "new_users": 90,
+      "pageviews": 152,
+      "bounce_rate": 53.6,
+      "avg_session": 123.7
     },
-    "synced_at": "2026-03-21T01:00:11.416980+00:00"
+    "synced_at": "2026-03-21T01:03:47.430140+00:00"
   },
   "email": {},
   "history": {
@@ -173,11 +211,11 @@
       7884,
       8063,
       8012,
+      8012,
       8012
     ],
     "ig": [],
     "x": [
-      249963,
       249853,
       249872,
       249878,
@@ -206,6 +244,7 @@
       249743,
       249707,
       249707,
+      249710,
       249710
     ],
     "yt": [
@@ -242,7 +281,6 @@
     ],
     "dau": [
       100,
-      100,
       95,
       95,
       74,
@@ -269,6 +307,7 @@
       42,
       54,
       54,
+      45,
       45,
       45
     ]
