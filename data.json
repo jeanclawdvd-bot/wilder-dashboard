@@ -1,17 +1,17 @@
 {
-  "synced_at": "2026-03-21T01:50:27.260519+00:00",
+  "synced_at": "2026-03-21T04:00:48.668507+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4378599,
     "videos": 10,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-21T01:49:46.414062+00:00",
+    "synced_at": "2026-03-21T04:00:01.291250+00:00",
     "recent_videos": [
       {
         "title": "Wiami never sleeps \ud83c\udf06 | Wilder World Super Early Access",
-        "views": 15,
-        "likes": 0,
+        "views": 364,
+        "likes": 1,
         "comments": 0,
         "published": "2026-03-21T01:36:50Z"
       },
@@ -31,57 +31,57 @@
       },
       {
         "title": "Super Early Access is now LIVE",
-        "views": 1880,
+        "views": 1883,
         "likes": 21,
         "comments": 1,
         "published": "2025-10-17T18:48:58Z"
       },
       {
         "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
-        "views": 3333745,
-        "likes": 19967,
-        "comments": 7977,
+        "views": 3333752,
+        "likes": 19968,
+        "comments": 7978,
         "published": "2024-12-22T00:00:06Z"
       }
     ],
-    "recent_views_total": 3336556,
-    "top_video_views": 3333745
+    "recent_views_total": 3336915,
+    "top_video_views": 3333752
   },
   "tiktok": {
-    "followers": 8064,
-    "likes": 103100,
+    "followers": 8014,
+    "likes": 103300,
     "videos": 126,
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T01:49:54.224056+00:00",
+    "synced_at": "2026-03-21T04:00:19.950565+00:00",
     "views": 0,
     "comments": 0,
     "shares": 0,
     "mc_followers": 0
   },
   "x": {
-    "followers": 249710,
+    "followers": 249712,
     "following": 959,
     "tweets": 43138,
-    "likes": 160620,
+    "likes": 160619,
     "listed": 961,
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T01:49:59.411397+00:00",
+    "synced_at": "2026-03-21T04:00:29.329645+00:00",
     "retweets": 5,
     "mentions": 0,
     "mc_followers": 0
   },
   "instagram": {
-    "followers": 167835,
+    "followers": 167832,
     "following": 485,
     "posts": 637,
     "verified": true,
     "username": "wilder.world",
     "fullName": "Wilder World",
-    "synced_at": "2026-03-21T01:50:14.268863+00:00",
+    "synced_at": "2026-03-21T04:00:35.286827+00:00",
     "impressions": 0,
     "reach": 0,
     "engagement": 0,
@@ -231,7 +231,7 @@
         ]
       }
     },
-    "synced_at": "2026-03-21T01:50:27.260451+00:00"
+    "synced_at": "2026-03-21T04:00:48.668457+00:00"
   },
   "dau": {
     "today": 34,
@@ -244,35 +244,19 @@
       "2026.03.19": 62,
       "2026.03.20": 34
     },
-    "synced_at": "2026-03-21T01:50:28.530965+00:00"
+    "synced_at": "2026-03-21T04:00:49.053035+00:00"
   },
   "pack_sales": {
     "error": "server offline",
-    "synced_at": "2026-03-21T01:50:38.534659+00:00"
+    "synced_at": "2026-03-21T04:00:59.057645+00:00"
   },
   "ga": {
-    "today": {
-      "sessions": 146,
-      "users": 118,
-      "new_users": 96,
-      "pageviews": 162,
-      "bounce_rate": 51.4,
-      "avg_session": 130.1
-    },
-    "week": {
-      "sessions": 2729,
-      "users": 2357,
-      "new_users": 2237,
-      "pageviews": 3155,
-      "bounce_rate": 49.1,
-      "avg_session": 123.9
-    },
-    "synced_at": "2026-03-21T01:50:40.202879+00:00"
+    "error": "No module named 'cryptography'",
+    "synced_at": "2026-03-21T04:00:59.061840+00:00"
   },
   "email": {},
   "history": {
     "tt": [
-      7783,
       7783,
       7783,
       7834,
@@ -301,11 +285,11 @@
       8012,
       8012,
       8012,
-      8064
+      8064,
+      8014
     ],
     "ig": [],
     "x": [
-      249878,
       249874,
       249874,
       249874,
@@ -334,7 +318,8 @@
       249710,
       249710,
       249710,
-      249710
+      249710,
+      249712
     ],
     "yt": [
       25100,
@@ -369,7 +354,6 @@
       25100
     ],
     "dau": [
-      95,
       74,
       91,
       94,
@@ -398,6 +382,7 @@
       45,
       45,
       45,
+      34,
       34
     ]
   }
