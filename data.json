@@ -1,13 +1,20 @@
 {
-  "synced_at": "2026-03-21T01:08:52.494781+00:00",
+  "synced_at": "2026-03-21T01:50:27.260519+00:00",
   "youtube": {
     "subscribers": 25100,
-    "views": 4378572,
-    "videos": 9,
+    "views": 4378599,
+    "videos": 10,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-21T01:07:53.815351+00:00",
+    "synced_at": "2026-03-21T01:49:46.414062+00:00",
     "recent_videos": [
+      {
+        "title": "Wiami never sleeps \ud83c\udf06 | Wilder World Super Early Access",
+        "views": 15,
+        "likes": 0,
+        "comments": 0,
+        "published": "2026-03-21T01:36:50Z"
+      },
       {
         "title": "Welcome to the future of gaming.",
         "views": 322,
@@ -35,26 +42,19 @@
         "likes": 19967,
         "comments": 7977,
         "published": "2024-12-22T00:00:06Z"
-      },
-      {
-        "title": "Midnight in Wiami - Wilder World Teaser",
-        "views": 103552,
-        "likes": 3517,
-        "comments": 1797,
-        "published": "2024-11-21T20:11:33Z"
       }
     ],
-    "recent_views_total": 3440093,
+    "recent_views_total": 3336556,
     "top_video_views": 3333745
   },
   "tiktok": {
-    "followers": 8012,
-    "likes": 103000,
+    "followers": 8064,
+    "likes": 103100,
     "videos": 126,
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T01:08:00.972858+00:00",
+    "synced_at": "2026-03-21T01:49:54.224056+00:00",
     "views": 0,
     "comments": 0,
     "shares": 0,
@@ -69,19 +69,19 @@
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T01:08:35.352455+00:00",
-    "retweets": 0,
+    "synced_at": "2026-03-21T01:49:59.411397+00:00",
+    "retweets": 5,
     "mentions": 0,
     "mc_followers": 0
   },
   "instagram": {
-    "followers": 167836,
+    "followers": 167835,
     "following": 485,
     "posts": 637,
     "verified": true,
     "username": "wilder.world",
     "fullName": "Wilder World",
-    "synced_at": "2026-03-21T01:08:40.621359+00:00",
+    "synced_at": "2026-03-21T01:50:14.268863+00:00",
     "impressions": 0,
     "reach": 0,
     "engagement": 0,
@@ -98,7 +98,44 @@
       "posts": 0,
       "likes": 0,
       "comments": 0,
-      "history": []
+      "timeline": {
+        "followers": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "impressions": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "reach": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "engagement": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "likes": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "comments": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ]
+      }
     },
     "tiktok": {
       "followers": 0,
@@ -106,20 +143,98 @@
       "views": 0,
       "comments": 0,
       "shares": 0,
-      "history": []
+      "timeline": {
+        "followers": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "views": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "likes": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "comments": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "shares": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ]
+      }
     },
     "x": {
       "followers": 0,
-      "tweets": 0,
-      "retweets": 0,
-      "likes": 0,
+      "tweets": 4,
+      "retweets": 5,
+      "likes": 11,
       "mentions": 0,
-      "history": []
+      "impressions": 442,
+      "engagements": 0,
+      "timeline": {
+        "followers": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "impressions": [
+          {
+            "date": "2026-03-16",
+            "value": 442
+          },
+          {
+            "date": "2026-03-17",
+            "value": 3408
+          }
+        ],
+        "engagements": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ],
+        "likes": [
+          {
+            "date": "2026-03-16",
+            "value": 11
+          },
+          {
+            "date": "2026-03-17",
+            "value": 82
+          }
+        ],
+        "retweets": [
+          {
+            "date": "2026-03-17",
+            "value": 5
+          }
+        ],
+        "mentions": [
+          {
+            "date": "2026-03-20",
+            "value": 0
+          }
+        ]
+      }
     },
-    "synced_at": "2026-03-21T01:08:52.494691+00:00"
+    "synced_at": "2026-03-21T01:50:27.260451+00:00"
   },
   "dau": {
-    "today": 45,
+    "today": 34,
     "history": {
       "2026.03.14": 66,
       "2026.03.15": 69,
@@ -127,32 +242,32 @@
       "2026.03.17": 66,
       "2026.03.18": 63,
       "2026.03.19": 62,
-      "2026.03.20": 45
+      "2026.03.20": 34
     },
-    "synced_at": "2026-03-21T01:08:53.104048+00:00"
+    "synced_at": "2026-03-21T01:50:28.530965+00:00"
   },
   "pack_sales": {
     "error": "server offline",
-    "synced_at": "2026-03-21T01:09:03.108225+00:00"
+    "synced_at": "2026-03-21T01:50:38.534659+00:00"
   },
   "ga": {
     "today": {
-      "sessions": 139,
-      "users": 111,
-      "new_users": 91,
-      "pageviews": 153,
-      "bounce_rate": 53.2,
-      "avg_session": 122.9
+      "sessions": 146,
+      "users": 118,
+      "new_users": 96,
+      "pageviews": 162,
+      "bounce_rate": 51.4,
+      "avg_session": 130.1
     },
     "week": {
-      "sessions": 2723,
-      "users": 2350,
-      "new_users": 2232,
-      "pageviews": 3146,
-      "bounce_rate": 49.2,
-      "avg_session": 123.5
+      "sessions": 2729,
+      "users": 2357,
+      "new_users": 2237,
+      "pageviews": 3155,
+      "bounce_rate": 49.1,
+      "avg_session": 123.9
     },
-    "synced_at": "2026-03-21T01:09:04.139713+00:00"
+    "synced_at": "2026-03-21T01:50:40.202879+00:00"
   },
   "email": {},
   "history": {
@@ -185,11 +300,11 @@
       8012,
       8012,
       8012,
-      8012
+      8012,
+      8064
     ],
     "ig": [],
     "x": [
-      249872,
       249878,
       249874,
       249874,
@@ -216,6 +331,7 @@
       249743,
       249707,
       249707,
+      249710,
       249710,
       249710,
       249710
@@ -254,7 +370,6 @@
     ],
     "dau": [
       95,
-      95,
       74,
       91,
       94,
@@ -282,7 +397,8 @@
       45,
       45,
       45,
-      45
+      45,
+      34
     ]
   }
 }

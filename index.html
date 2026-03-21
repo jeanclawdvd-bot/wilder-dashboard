@@ -6,6 +6,7 @@
 <title>WILDER WORLD — COMMAND CENTER</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <style>
 :root{
   --orange:#FF6434;--pink:#FF2D87;--dark:#080808;--card:#0D0D0D;
@@ -221,6 +222,39 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .velocity-metric{flex:1}
 .velocity-label{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-bottom:2px}
 .velocity-val{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px}
+
+/* ══════════════════ CHANNEL ANALYTICS ══════════════════ */
+.ch-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.ch-title{display:flex;align-items:center;gap:10px}
+.ch-icon{font-size:22px;opacity:0.9}
+.ch-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px}
+.ch-handle{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:2px;margin-top:2px}
+.range-btns{display:flex;gap:4px}
+.range-btn{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;padding:5px 14px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;transition:all 0.2s}
+.range-btn:hover{border-color:currentColor;color:var(--accent,var(--orange))}
+.range-btn.active{border-color:var(--accent,var(--orange));color:var(--accent,var(--orange));background:rgba(255,100,52,0.06)}
+.ch-kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:18px}
+@media(min-width:600px){.ch-kpi-row{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.ch-kpi-row{grid-template-columns:repeat(6,1fr)}}
+.kpi{background:var(--card);border:1px solid var(--border);padding:14px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--orange));box-shadow:0 0 8px var(--accent,var(--orange))}
+.kpi-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);letter-spacing:1px;line-height:1;color:var(--white);margin-bottom:3px}
+.kpi-lbl{font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--text);text-transform:uppercase}
+.ch-chart-panel{background:var(--card);border:1px solid var(--border);padding:18px;margin-bottom:18px;position:relative}
+.ch-chart-panel::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--accent,var(--orange));border-right:1px solid var(--accent,var(--orange));opacity:0.25}
+.ch-chart-title{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;margin-bottom:14px;color:var(--white)}
+.ch-chart-wrap{position:relative;height:220px}
+@media(min-width:640px){.ch-chart-wrap{height:280px}}
+.ch-no-data{display:flex;align-items:center;justify-content:center;height:200px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:3px;flex-direction:column;gap:8px}
+.ch-secondary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+@media(min-width:640px){.ch-secondary-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.ch-secondary-grid{grid-template-columns:repeat(4,1fr)}}
+/* Platform accent overrides per tab */
+#tab-x    .kpi::before,#tab-x    .ch-chart-panel::after{background:var(--x);border-color:var(--x)}
+#tab-ig   .kpi::before,#tab-ig   .ch-chart-panel::after{background:var(--ig);border-color:var(--ig)}
+#tab-tiktok .kpi::before,#tab-tiktok .ch-chart-panel::after{background:var(--tiktok);border-color:var(--tiktok)}
+#tab-youtube .kpi::before,#tab-youtube .ch-chart-panel::after{background:var(--yt);border-color:var(--yt)}
+#tab-website .kpi::before,#tab-website .ch-chart-panel::after{background:var(--orange);border-color:var(--orange)}
 </style>
 </head>
 <body>
@@ -261,6 +295,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   <!-- DESKTOP TABS -->
   <div class="tab-bar">
     <div class="tab active" onclick="switchTab('overview',this)">// Overview</div>
+    <div class="tab" onclick="switchTab('x',this);renderChannelTab('x')">// X</div>
+    <div class="tab" onclick="switchTab('ig',this);renderChannelTab('ig')">// Instagram</div>
+    <div class="tab" onclick="switchTab('tiktok',this);renderChannelTab('tiktok')">// TikTok</div>
+    <div class="tab" onclick="switchTab('youtube',this);renderChannelTab('youtube')">// YouTube</div>
+    <div class="tab" onclick="switchTab('website',this);renderChannelTab('web')">// Website</div>
     <div class="tab" onclick="switchTab('growth',this)">// Growth</div>
   </div>
 
@@ -410,6 +449,163 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
     </div>
   </div>
 
+  <!-- ════════════════ X TAB ════════════════ -->
+  <div id="tab-x" class="tab-content">
+    <div class="ch-header">
+      <div class="ch-title">
+        <span class="ch-icon" style="color:var(--x)">𝕏</span>
+        <div><div class="ch-name" style="color:var(--x)">X / TWITTER</div><div class="ch-handle">@WilderWorld</div></div>
+      </div>
+      <div class="range-btns" style="--accent:var(--x)">
+        <button class="range-btn active" onclick="setRange('x','7d',this)">7D</button>
+        <button class="range-btn" onclick="setRange('x','30d',this)">30D</button>
+      </div>
+    </div>
+    <div class="ch-kpi-row" style="--accent:var(--x)">
+      <div class="kpi"><div class="kpi-val" id="x-kpi-followers">—</div><div class="kpi-lbl">Followers</div></div>
+      <div class="kpi"><div class="kpi-val" id="x-kpi-impressions">—</div><div class="kpi-lbl">Impressions</div></div>
+      <div class="kpi"><div class="kpi-val" id="x-kpi-engagements">—</div><div class="kpi-lbl">Engagements</div></div>
+      <div class="kpi"><div class="kpi-val" id="x-kpi-likes">—</div><div class="kpi-lbl">Likes</div></div>
+      <div class="kpi"><div class="kpi-val" id="x-kpi-retweets">—</div><div class="kpi-lbl">Retweets</div></div>
+      <div class="kpi"><div class="kpi-val" id="x-kpi-mentions">—</div><div class="kpi-lbl">Mentions</div></div>
+    </div>
+    <div class="ch-chart-panel" style="--accent:var(--x)">
+      <div class="ch-chart-title">IMPRESSIONS OVER TIME</div>
+      <div class="ch-chart-wrap" id="x-chart-wrap"><canvas id="x-chart"></canvas></div>
+    </div>
+    <div class="ch-secondary-grid" style="--accent:var(--x)">
+      <div class="ch-chart-panel"><div class="ch-chart-title">ENGAGEMENTS</div><div class="ch-chart-wrap" style="height:140px" id="x-eng-wrap"><canvas id="x-eng-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">LIKES & RETWEETS</div><div class="ch-chart-wrap" style="height:140px" id="x-lr-wrap"><canvas id="x-lr-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">FOLLOWER GROWTH</div><div class="ch-chart-wrap" style="height:140px" id="x-fol-wrap"><canvas id="x-fol-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">MENTIONS</div><div class="ch-chart-wrap" style="height:140px" id="x-men-wrap"><canvas id="x-men-chart"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════ INSTAGRAM TAB ════════════════ -->
+  <div id="tab-ig" class="tab-content">
+    <div class="ch-header">
+      <div class="ch-title">
+        <span class="ch-icon" style="color:var(--ig)">◎</span>
+        <div><div class="ch-name" style="color:var(--ig)">Instagram</div><div class="ch-handle">@wilder.world</div></div>
+      </div>
+      <div class="range-btns" style="--accent:var(--ig)">
+        <button class="range-btn active" onclick="setRange('ig','7d',this)">7D</button>
+        <button class="range-btn" onclick="setRange('ig','30d',this)">30D</button>
+      </div>
+    </div>
+    <div class="ch-kpi-row" style="--accent:var(--ig)">
+      <div class="kpi"><div class="kpi-val" id="ig-kpi-followers">—</div><div class="kpi-lbl">Followers</div></div>
+      <div class="kpi"><div class="kpi-val" id="ig-kpi-impressions">—</div><div class="kpi-lbl">Impressions</div></div>
+      <div class="kpi"><div class="kpi-val" id="ig-kpi-reach">—</div><div class="kpi-lbl">Reach</div></div>
+      <div class="kpi"><div class="kpi-val" id="ig-kpi-engagement">—</div><div class="kpi-lbl">Engagement</div></div>
+      <div class="kpi"><div class="kpi-val" id="ig-kpi-likes">—</div><div class="kpi-lbl">Likes</div></div>
+      <div class="kpi"><div class="kpi-val" id="ig-kpi-comments">—</div><div class="kpi-lbl">Comments</div></div>
+    </div>
+    <div class="ch-chart-panel" style="--accent:var(--ig)">
+      <div class="ch-chart-title">IMPRESSIONS OVER TIME</div>
+      <div class="ch-chart-wrap" id="ig-chart-wrap"><canvas id="ig-chart"></canvas></div>
+    </div>
+    <div class="ch-secondary-grid" style="--accent:var(--ig)">
+      <div class="ch-chart-panel"><div class="ch-chart-title">REACH</div><div class="ch-chart-wrap" style="height:140px"><canvas id="ig-reach-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">ENGAGEMENT</div><div class="ch-chart-wrap" style="height:140px"><canvas id="ig-eng-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">LIKES & COMMENTS</div><div class="ch-chart-wrap" style="height:140px"><canvas id="ig-lc-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">FOLLOWER GROWTH</div><div class="ch-chart-wrap" style="height:140px"><canvas id="ig-fol-chart"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════ TIKTOK TAB ════════════════ -->
+  <div id="tab-tiktok" class="tab-content">
+    <div class="ch-header">
+      <div class="ch-title">
+        <span class="ch-icon" style="color:var(--tiktok)">♪</span>
+        <div><div class="ch-name" style="color:var(--tiktok)">TikTok</div><div class="ch-handle">@wilder.world</div></div>
+      </div>
+      <div class="range-btns" style="--accent:var(--tiktok)">
+        <button class="range-btn active" onclick="setRange('tt','7d',this)">7D</button>
+        <button class="range-btn" onclick="setRange('tt','30d',this)">30D</button>
+      </div>
+    </div>
+    <div class="ch-kpi-row" style="--accent:var(--tiktok)">
+      <div class="kpi"><div class="kpi-val" id="tt-kpi-followers">—</div><div class="kpi-lbl">Followers</div></div>
+      <div class="kpi"><div class="kpi-val" id="tt-kpi-views">—</div><div class="kpi-lbl">Views</div></div>
+      <div class="kpi"><div class="kpi-val" id="tt-kpi-likes">—</div><div class="kpi-lbl">Likes</div></div>
+      <div class="kpi"><div class="kpi-val" id="tt-kpi-comments">—</div><div class="kpi-lbl">Comments</div></div>
+      <div class="kpi"><div class="kpi-val" id="tt-kpi-shares">—</div><div class="kpi-lbl">Shares</div></div>
+      <div class="kpi"><div class="kpi-val" id="tt-kpi-engage">—</div><div class="kpi-lbl">Engagement</div></div>
+    </div>
+    <div class="ch-chart-panel" style="--accent:var(--tiktok)">
+      <div class="ch-chart-title">VIEWS OVER TIME</div>
+      <div class="ch-chart-wrap" id="tt-chart-wrap"><canvas id="tt-chart"></canvas></div>
+    </div>
+    <div class="ch-secondary-grid" style="--accent:var(--tiktok)">
+      <div class="ch-chart-panel"><div class="ch-chart-title">LIKES</div><div class="ch-chart-wrap" style="height:140px"><canvas id="tt-likes-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">SHARES</div><div class="ch-chart-wrap" style="height:140px"><canvas id="tt-shares-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">COMMENTS</div><div class="ch-chart-wrap" style="height:140px"><canvas id="tt-comments-chart"></canvas></div></div>
+      <div class="ch-chart-panel"><div class="ch-chart-title">FOLLOWER GROWTH</div><div class="ch-chart-wrap" style="height:140px"><canvas id="tt-fol-chart"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════ YOUTUBE TAB ════════════════ -->
+  <div id="tab-youtube" class="tab-content">
+    <div class="ch-header">
+      <div class="ch-title">
+        <span class="ch-icon" style="color:var(--yt)">▶</span>
+        <div><div class="ch-name" style="color:var(--yt)">YouTube</div><div class="ch-handle">Wilder World</div></div>
+      </div>
+      <div class="range-btns" style="--accent:var(--yt)">
+        <button class="range-btn active" onclick="setRange('yt','7d',this)">7D</button>
+        <button class="range-btn" onclick="setRange('yt','30d',this)">30D</button>
+      </div>
+    </div>
+    <div class="ch-kpi-row" style="--accent:var(--yt)">
+      <div class="kpi"><div class="kpi-val" id="yt-kpi-subs">—</div><div class="kpi-lbl">Subscribers</div></div>
+      <div class="kpi"><div class="kpi-val" id="yt-kpi-views">—</div><div class="kpi-lbl">Total Views</div></div>
+      <div class="kpi"><div class="kpi-val" id="yt-kpi-videos">—</div><div class="kpi-lbl">Videos</div></div>
+      <div class="kpi"><div class="kpi-val" id="yt-kpi-avgsubs">—</div><div class="kpi-lbl">Views / Video</div></div>
+      <div class="kpi"><div class="kpi-val" id="yt-kpi-shorts">—</div><div class="kpi-lbl">Shorts Posted</div></div>
+      <div class="kpi"><div class="kpi-val" id="yt-kpi-latest">—</div><div class="kpi-lbl">Latest Views</div></div>
+    </div>
+    <div class="ch-chart-panel" style="--accent:var(--yt)">
+      <div class="ch-chart-title">SUBSCRIBER GROWTH</div>
+      <div class="ch-chart-wrap" id="yt-chart-wrap">
+        <div class="ch-no-data">▶ HISTORY ACCUMULATING<br><span style="font-size:9px;opacity:0.5">Syncs daily at 9am, 3pm, 9pm</span></div>
+      </div>
+    </div>
+    <div class="panel" style="margin-bottom:18px">
+      <div class="panel-title">Recent Videos</div>
+      <div class="panel-sub">// LATEST UPLOADS</div>
+      <div class="yt-videos" id="yt-tab-recent"></div>
+    </div>
+  </div>
+
+  <!-- ════════════════ WEBSITE TAB ════════════════ -->
+  <div id="tab-website" class="tab-content">
+    <div class="ch-header">
+      <div class="ch-title">
+        <span class="ch-icon" style="color:var(--orange)">◈</span>
+        <div><div class="ch-name" style="color:var(--orange)">Website</div><div class="ch-handle">wilderworld.com — GA4</div></div>
+      </div>
+      <div class="range-btns" style="--accent:var(--orange)">
+        <button class="range-btn active" onclick="setRange('web','today',this)">TODAY</button>
+        <button class="range-btn" onclick="setRange('web','7d',this)">7D</button>
+      </div>
+    </div>
+    <div class="ch-kpi-row" style="--accent:var(--orange)">
+      <div class="kpi"><div class="kpi-val" id="web-kpi-sessions">—</div><div class="kpi-lbl">Sessions</div></div>
+      <div class="kpi"><div class="kpi-val" id="web-kpi-users">—</div><div class="kpi-lbl">Users</div></div>
+      <div class="kpi"><div class="kpi-val" id="web-kpi-new">—</div><div class="kpi-lbl">New Users</div></div>
+      <div class="kpi"><div class="kpi-val" id="web-kpi-pages">—</div><div class="kpi-lbl">Pageviews</div></div>
+      <div class="kpi"><div class="kpi-val" id="web-kpi-bounce">—</div><div class="kpi-lbl">Bounce Rate</div></div>
+      <div class="kpi"><div class="kpi-val" id="web-kpi-duration">—</div><div class="kpi-lbl">Avg Duration</div></div>
+    </div>
+    <div class="ch-chart-panel" style="--accent:var(--orange)">
+      <div class="ch-chart-title">SESSIONS OVER TIME</div>
+      <div class="ch-chart-wrap" id="web-chart-wrap">
+        <div class="ch-no-data">◈ HISTORY ACCUMULATING<br><span style="font-size:9px;opacity:0.5">Syncs daily at 9am, 3pm, 9pm</span></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ════════════════ GROWTH TAB ════════════════ -->
   <div id="tab-growth" class="tab-content">
     <div class="section-label">// Audience Snapshot</div>
@@ -474,14 +670,12 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 
 <!-- MOBILE BOTTOM NAV -->
 <nav class="mobile-nav">
-  <button class="mnav-btn active" id="mnav-overview" onclick="switchTab('overview',document.querySelector('.tab'));mnavActivate(this)">
-    <span class="mnav-icon">◈</span>
-    <span>OVERVIEW</span>
-  </button>
-  <button class="mnav-btn" id="mnav-growth" onclick="switchTab('growth',document.querySelectorAll('.tab')[1]);mnavActivate(this)">
-    <span class="mnav-icon">↑</span>
-    <span>GROWTH</span>
-  </button>
+  <button class="mnav-btn active" onclick="switchTabMobile('overview',this)"><span class="mnav-icon">◈</span><span>OVR</span></button>
+  <button class="mnav-btn" onclick="switchTabMobile('x',this)"><span class="mnav-icon" style="color:var(--x)">𝕏</span><span>X</span></button>
+  <button class="mnav-btn" onclick="switchTabMobile('ig',this)"><span class="mnav-icon" style="color:var(--ig)">◎</span><span>IG</span></button>
+  <button class="mnav-btn" onclick="switchTabMobile('tiktok',this)"><span class="mnav-icon" style="color:var(--tiktok)">♪</span><span>TT</span></button>
+  <button class="mnav-btn" onclick="switchTabMobile('youtube',this)"><span class="mnav-icon" style="color:var(--yt)">▶</span><span>YT</span></button>
+  <button class="mnav-btn" onclick="switchTabMobile('website',this)"><span class="mnav-icon">◈</span><span>WEB</span></button>
 </nav>
 
 <script>
@@ -522,7 +716,7 @@ function mnavActivate(btn){
 function fmt(n){if(!n&&n!==0)return'—';n=parseInt(n)||0;if(n>=1000000)return(n/1000000).toFixed(1)+'M';if(n>=1000)return(n/1000).toFixed(1)+'K';return n.toString();}
 function fmt2(n){if(!n&&n!==0)return'0';n=Number(n);if(n>=1000000)return(n/1000000).toFixed(1)+'M';if(n>=1000)return(n/1000).toFixed(1)+'K';return Math.round(n).toString();}
 
-let state = {history:{yt:[],tt:[],ig:[],x:[],dau:[]},dau:0,platforms:{}};
+let state = {history:{yt:[],tt:[],ig:[],x:[],dau:[]},dau:0,platforms:{yt:{},tt:{},ig:{},x:{},ga:{},mc:{}}};
 let seriesVisible = {yt:true,tt:true,ig:true,x:true};
 
 function toggleSeries(key,el){
@@ -552,7 +746,9 @@ async function loadData(){
 
 function renderData(data){
   const yt=data.youtube||{},tt=data.tiktok||{},ig=data.instagram||{},x=data.x||{};
-  state.platforms={yt,tt,ig,x};
+  const mc=data.metricool||{};
+  const ga=data.ga||{};
+  state.platforms={yt,tt,ig,x,mc,ga};
 
   if(yt.subscribers!==undefined){
     document.getElementById('yt-val').textContent=fmt(yt.subscribers);
@@ -803,6 +999,188 @@ setInterval(updateClock,1000);updateClock();
 if(sessionStorage.getItem('ww_auth')==='ww_ok'){loadData();}
 window.addEventListener('resize',drawChart);
 setInterval(()=>{if(sessionStorage.getItem('ww_auth')==='ww_ok')loadData();},300000);
+
+/* ── MOBILE TAB SWITCH ── */
+function switchTabMobile(name,btn){
+  document.querySelectorAll('.mnav-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  const t=document.getElementById('tab-'+name);
+  if(t){t.classList.add('active'); renderChannelTab(name);}
+}
+
+/* ── CHANNEL RANGE STATE ── */
+const chRanges={x:'7d',ig:'7d',tt:'7d',yt:'7d',web:'today'};
+const chCharts={};
+
+function setRange(ch,range,btn){
+  chRanges[ch]=range;
+  btn.closest('.range-btns').querySelectorAll('.range-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderChannelTab(ch);
+}
+
+function filterByRange(timeline,range){
+  if(!timeline||!timeline.length) return [];
+  const now=new Date();
+  let cutoff=new Date(now);
+  if(range==='7d') cutoff.setDate(cutoff.getDate()-7);
+  else if(range==='30d') cutoff.setDate(cutoff.getDate()-30);
+  else if(range==='today') cutoff.setDate(cutoff.getDate()-1);
+  else return timeline;
+  const cutStr=cutoff.toISOString().slice(0,10);
+  return timeline.filter(p=>p.date>=cutStr);
+}
+
+function makeChart(canvasId,timeline,color,label,range,type='line'){
+  const canvas=document.getElementById(canvasId);
+  if(!canvas) return;
+  const filtered=filterByRange(timeline,range);
+  if(chCharts[canvasId]){chCharts[canvasId].destroy();}
+
+  if(!filtered.length){
+    // Show no-data message
+    const wrap=canvas.parentElement;
+    if(!wrap.querySelector('.ch-no-data')){
+      canvas.style.display='none';
+      const nd=document.createElement('div');
+      nd.className='ch-no-data';nd.innerHTML='AWAITING DATA<br><span style="font-size:9px;opacity:0.5">Metricool syncing…</span>';
+      wrap.appendChild(nd);
+    }
+    return;
+  }
+  // Remove no-data if present
+  canvas.style.display='';
+  const nd=canvas.parentElement.querySelector('.ch-no-data');
+  if(nd) nd.remove();
+
+  const labels=filtered.map(p=>{
+    const d=new Date(p.date);
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  });
+  const vals=filtered.map(p=>p.value);
+
+  const cfg={
+    type,
+    data:{
+      labels,
+      datasets:[{
+        label,
+        data:vals,
+        borderColor:color,
+        backgroundColor:type==='bar'?color+'55':color+'22',
+        borderWidth:2,
+        pointRadius:filtered.length>14?0:3,
+        pointHoverRadius:5,
+        pointBackgroundColor:color,
+        fill:type==='line',
+        tension:0.35,
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      animation:{duration:400},
+      plugins:{legend:{display:false},tooltip:{
+        backgroundColor:'rgba(8,8,8,0.9)',
+        borderColor:color,borderWidth:1,
+        titleColor:'rgba(255,255,255,0.7)',
+        bodyColor:color,
+        titleFont:{family:'Share Tech Mono'},
+        bodyFont:{family:'Bebas Neue',size:16},
+        callbacks:{label:ctx=>' '+fmt(ctx.raw)}
+      }},
+      scales:{
+        x:{grid:{color:'rgba(255,100,52,0.04)',drawBorder:false},
+           ticks:{color:'rgba(255,255,255,0.25)',font:{family:'Share Tech Mono',size:8},maxRotation:0,maxTicksLimit:7}},
+        y:{grid:{color:'rgba(255,100,52,0.06)',drawBorder:false},
+           ticks:{color:'rgba(255,255,255,0.3)',font:{family:'Share Tech Mono',size:8},
+                  callback:v=>fmt2(v)},
+           beginAtZero:false}
+      }
+    }
+  };
+  chCharts[canvasId]=new Chart(canvas.getContext('2d'),cfg);
+}
+
+function renderChannelTab(ch){
+  const mc=state.platforms.mc||{};
+  const r=chRanges[ch]||'7d';
+
+  if(ch==='x'){
+    const xd=mc.x||{};
+    const tl=xd.timeline||{};
+    document.getElementById('x-kpi-followers').textContent=fmt(state.platforms.x.followers||xd.followers||0);
+    document.getElementById('x-kpi-impressions').textContent=fmt(xd.impressions||0);
+    document.getElementById('x-kpi-engagements').textContent=fmt(xd.engagements||0);
+    document.getElementById('x-kpi-likes').textContent=fmt(xd.likes||0);
+    document.getElementById('x-kpi-retweets').textContent=fmt(xd.retweets||0);
+    document.getElementById('x-kpi-mentions').textContent=fmt(xd.mentions||0);
+    makeChart('x-chart',    tl.impressions,'#E7E7E7','Impressions',r);
+    makeChart('x-eng-chart',tl.engagements,'#E7E7E7','Engagements',r,'bar');
+    makeChart('x-lr-chart', tl.likes,      '#FF6434','Likes',r,'bar');
+    makeChart('x-fol-chart',tl.followers,  '#E7E7E7','Followers',r);
+    makeChart('x-men-chart',tl.mentions,   '#FF6434','Mentions',r,'bar');
+  }
+  else if(ch==='ig'){
+    const igd=mc.instagram||{};
+    const tl=igd.timeline||{};
+    document.getElementById('ig-kpi-followers').textContent=fmt(state.platforms.ig.followers||igd.followers||0);
+    document.getElementById('ig-kpi-impressions').textContent=fmt(igd.impressions||0);
+    document.getElementById('ig-kpi-reach').textContent=fmt(igd.reach||0);
+    document.getElementById('ig-kpi-engagement').textContent=fmt(igd.engagement||0);
+    document.getElementById('ig-kpi-likes').textContent=fmt(igd.likes||0);
+    document.getElementById('ig-kpi-comments').textContent=fmt(igd.comments||0);
+    makeChart('ig-chart',      tl.impressions,'#E1306C','Impressions',r);
+    makeChart('ig-reach-chart',tl.reach,      '#E1306C','Reach',r);
+    makeChart('ig-eng-chart',  tl.engagement, '#FF6434','Engagement',r,'bar');
+    makeChart('ig-lc-chart',   tl.likes,      '#E1306C','Likes',r,'bar');
+    makeChart('ig-fol-chart',  tl.followers,  '#E1306C','Followers',r);
+  }
+  else if(ch==='tiktok'){
+    const ttd=mc.tiktok||{};
+    const tl=ttd.timeline||{};
+    const ttBase=state.platforms.tt||{};
+    document.getElementById('tt-kpi-followers').textContent=fmt(ttBase.followers||ttd.followers||0);
+    document.getElementById('tt-kpi-views').textContent=fmt(ttd.views||ttBase.likes||0);
+    document.getElementById('tt-kpi-likes').textContent=fmt(ttd.likes||0);
+    document.getElementById('tt-kpi-comments').textContent=fmt(ttd.comments||0);
+    document.getElementById('tt-kpi-shares').textContent=fmt(ttd.shares||0);
+    const totalEng=(ttd.likes||0)+(ttd.comments||0)+(ttd.shares||0);
+    document.getElementById('tt-kpi-engage').textContent=fmt(totalEng);
+    makeChart('tt-chart',        tl.views,   '#FF0050','Views',r);
+    makeChart('tt-likes-chart',  tl.likes,   '#FF0050','Likes',r,'bar');
+    makeChart('tt-shares-chart', tl.shares,  '#FF6434','Shares',r,'bar');
+    makeChart('tt-comments-chart',tl.comments,'#FF0050','Comments',r,'bar');
+    makeChart('tt-fol-chart',    tl.followers,'#FF0050','Followers',r);
+  }
+  else if(ch==='youtube'){
+    const yt=state.platforms.yt||{};
+    document.getElementById('yt-kpi-subs').textContent=fmt(yt.subscribers||0);
+    document.getElementById('yt-kpi-views').textContent=fmt(yt.views||0);
+    document.getElementById('yt-kpi-videos').textContent=fmt(yt.videos||0);
+    const vpv=yt.videos?Math.round((yt.views||0)/yt.videos):0;
+    document.getElementById('yt-kpi-avgsubs').textContent=fmt(vpv);
+    document.getElementById('yt-kpi-shorts').textContent='—';
+    const recent=yt.recent_videos||[];
+    document.getElementById('yt-kpi-latest').textContent=recent.length?fmt(recent[0].views||0):'—';
+    const el=document.getElementById('yt-tab-recent'); if(el){el.innerHTML='';
+      recent.forEach(v=>{el.innerHTML+=`<div class="yt-video-item"><span class="yt-video-title">${v.title}</span><span class="yt-video-views">${fmt(v.views)} views</span></div>`;});}
+  }
+  else if(ch==='web'){
+    const ga=state.platforms.ga||{};
+    const isToday=r==='today';
+    const d=isToday?(ga.today||{}):(ga.week||{});
+    document.getElementById('web-kpi-sessions').textContent=fmt(d.sessions||0);
+    document.getElementById('web-kpi-users').textContent=fmt(d.users||0);
+    document.getElementById('web-kpi-new').textContent=fmt(d.new_users||0);
+    document.getElementById('web-kpi-pages').textContent=fmt(d.pageviews||0);
+    document.getElementById('web-kpi-bounce').textContent=(d.bounce_rate||0)+'%';
+    const dur=d.avg_session||0;
+    document.getElementById('web-kpi-duration').textContent=Math.floor(dur/60)+'m '+Math.round(dur%60)+'s';
+  }
+}
+
+/* Channel tab rendering is called after switchTab in the HTML onclick */
 </script>
 </body>
 </html>
