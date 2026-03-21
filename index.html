@@ -438,6 +438,42 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
       </div>
     </div>
 
+    <!-- Z CHAIN PANEL -->
+    <div class="section-label">// Z Chain — On-Chain Activity</div>
+    <div class="bottom-grid" style="margin-bottom:16px">
+      <div class="panel" style="--pc:#7B5CF0">
+        <div class="panel-title" style="color:#a78bfa">Z Chain Stats</div>
+        <div class="panel-sub">// zscan.live — LIVE</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-txns-today">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TXNs TODAY</div>
+          </div>
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-total-txns">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL TXNs</div>
+          </div>
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-addresses">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">ADDRESSES</div>
+          </div>
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-blocks">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL BLOCKS</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" style="grid-column:span 2">
+        <div class="panel-title" style="color:#a78bfa">Recent Transactions</div>
+        <div class="panel-sub">// LATEST Z CHAIN ACTIVITY</div>
+        <div id="zc-txns-list" style="overflow-y:auto;max-height:240px;scrollbar-width:thin;scrollbar-color:rgba(123,92,240,0.3) transparent"></div>
+      </div>
+    </div>
+
     <div class="section-label">// Manual Override</div>
     <div class="input-section">
       <span class="input-label">DAU //</span>
@@ -842,6 +878,32 @@ function renderData(data){
   if(data.synced_at){
     const d=new Date(data.synced_at);
     document.getElementById('last-sync').textContent='LAST SYNC: '+d.toLocaleString();
+  }
+
+  // Z Chain
+  const zc=data.zchain||{};
+  if(!zc.error){
+    document.getElementById('zc-txns-today').textContent=fmt(zc.transactions_today||0);
+    document.getElementById('zc-total-txns').textContent=fmt(zc.total_transactions||0);
+    document.getElementById('zc-addresses').textContent=fmt(zc.total_addresses||0);
+    document.getElementById('zc-blocks').textContent=fmt(zc.total_blocks||0);
+    const list=document.getElementById('zc-txns-list');
+    if(list){
+      list.innerHTML='';
+      (zc.recent_txns||[]).forEach(t=>{
+        const ts=t.timestamp?new Date(t.timestamp).toLocaleTimeString():'';
+        const ok=t.status==='ok';
+        const statusColor=ok?'var(--green)':'var(--pink)';
+        const statusDot=ok?'●':'✕';
+        list.innerHTML+=`<div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);font-family:'Share Tech Mono',monospace;font-size:9px;flex-wrap:wrap">
+          <span style="color:${statusColor};flex-shrink:0">${statusDot}</span>
+          <a href="https://zscan.live/tx/${t.hash_full}" target="_blank" style="color:#a78bfa;text-decoration:none;letter-spacing:1px;flex-shrink:0">${t.hash}…</a>
+          <span style="color:var(--orange);background:rgba(255,100,52,0.08);padding:1px 6px;border:1px solid rgba(255,100,52,0.15);flex-shrink:0">${t.method||'transfer'}</span>
+          <span style="color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${t.from} → ${t.to}</span>
+          <span style="color:var(--text);flex-shrink:0">${ts}</span>
+        </div>`;
+      });
+    }
   }
 }
 
