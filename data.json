@@ -1,12 +1,12 @@
 {
-  "synced_at": "2026-03-21T01:03:35.105398+00:00",
+  "synced_at": "2026-03-21T01:08:52.494781+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4378572,
     "videos": 9,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-21T01:02:38.241847+00:00",
+    "synced_at": "2026-03-21T01:07:53.815351+00:00",
     "recent_videos": [
       {
         "title": "Welcome to the future of gaming.",
@@ -42,37 +42,9 @@
         "likes": 3517,
         "comments": 1797,
         "published": "2024-11-21T20:11:33Z"
-      },
-      {
-        "title": "Wilder World GENs Trailer",
-        "views": 38736,
-        "likes": 348,
-        "comments": 404,
-        "published": "2023-03-14T16:24:18Z"
-      },
-      {
-        "title": "Wilder World: Pre-Alpha Gameplay Teaser [4K, Ray Tracing, UE5]",
-        "views": 805164,
-        "likes": 3249,
-        "comments": 2306,
-        "published": "2023-02-01T02:30:08Z"
-      },
-      {
-        "title": "Wilder World Wapes Trailer",
-        "views": 92868,
-        "likes": 150,
-        "comments": 81,
-        "published": "2022-12-20T19:57:12Z"
-      },
-      {
-        "title": "Wilder Moto Teaser Trailer",
-        "views": 1742,
-        "likes": 80,
-        "comments": 23,
-        "published": "2022-06-27T13:56:53Z"
       }
     ],
-    "recent_views_total": 4378603,
+    "recent_views_total": 3440093,
     "top_video_views": 3333745
   },
   "tiktok": {
@@ -82,7 +54,7 @@
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T01:02:53.466502+00:00",
+    "synced_at": "2026-03-21T01:08:00.972858+00:00",
     "views": 0,
     "comments": 0,
     "shares": 0,
@@ -97,7 +69,7 @@
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T01:03:04.184669+00:00",
+    "synced_at": "2026-03-21T01:08:35.352455+00:00",
     "retweets": 0,
     "mentions": 0,
     "mc_followers": 0
@@ -109,7 +81,7 @@
     "verified": true,
     "username": "wilder.world",
     "fullName": "Wilder World",
-    "synced_at": "2026-03-21T01:03:23.360541+00:00",
+    "synced_at": "2026-03-21T01:08:40.621359+00:00",
     "impressions": 0,
     "reach": 0,
     "engagement": 0,
@@ -144,7 +116,7 @@
       "mentions": 0,
       "history": []
     },
-    "synced_at": "2026-03-21T01:03:35.105300+00:00"
+    "synced_at": "2026-03-21T01:08:52.494691+00:00"
   },
   "dau": {
     "today": 45,
@@ -157,30 +129,30 @@
       "2026.03.19": 62,
       "2026.03.20": 45
     },
-    "synced_at": "2026-03-21T01:03:36.426033+00:00"
+    "synced_at": "2026-03-21T01:08:53.104048+00:00"
   },
   "pack_sales": {
     "error": "server offline",
-    "synced_at": "2026-03-21T01:03:46.429128+00:00"
+    "synced_at": "2026-03-21T01:09:03.108225+00:00"
   },
   "ga": {
     "today": {
-      "sessions": 2893,
-      "users": 2487,
-      "new_users": 2365,
-      "pageviews": 3344,
-      "bounce_rate": 49.3,
-      "avg_session": 121.6
+      "sessions": 139,
+      "users": 111,
+      "new_users": 91,
+      "pageviews": 153,
+      "bounce_rate": 53.2,
+      "avg_session": 122.9
     },
     "week": {
-      "sessions": 138,
-      "users": 110,
-      "new_users": 90,
-      "pageviews": 152,
-      "bounce_rate": 53.6,
-      "avg_session": 123.7
+      "sessions": 2723,
+      "users": 2350,
+      "new_users": 2232,
+      "pageviews": 3146,
+      "bounce_rate": 49.2,
+      "avg_session": 123.5
     },
-    "synced_at": "2026-03-21T01:03:47.430140+00:00"
+    "synced_at": "2026-03-21T01:09:04.139713+00:00"
   },
   "email": {},
   "history": {
@@ -212,11 +184,11 @@
       8063,
       8012,
       8012,
+      8012,
       8012
     ],
     "ig": [],
     "x": [
-      249853,
       249872,
       249878,
       249874,
@@ -244,6 +216,7 @@
       249743,
       249707,
       249707,
+      249710,
       249710,
       249710
     ],
@@ -280,7 +253,6 @@
       25100
     ],
     "dau": [
-      100,
       95,
       95,
       74,
@@ -307,6 +279,7 @@
       42,
       54,
       54,
+      45,
       45,
       45,
       45
