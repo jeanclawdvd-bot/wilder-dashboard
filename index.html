@@ -751,8 +751,8 @@ async function loadData(){
 function renderData(data){
   const yt=data.youtube||{},tt=data.tiktok||{},ig=data.instagram||{},x=data.x||{};
   const mc=data.metricool||{};
-  const ga=data.ga||{};
-  state.platforms={yt,tt,ig,x,mc,ga};
+  const gaData=data.ga||{};
+  state.platforms={yt,tt,ig,x,mc,ga:gaData};
 
   if(yt.subscribers!==undefined){
     document.getElementById('yt-val').textContent=fmt(yt.subscribers);
