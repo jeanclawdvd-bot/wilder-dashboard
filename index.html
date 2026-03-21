@@ -1166,6 +1166,8 @@ function filterByRange(timeline,range){
   else if(range==='7d') cutoff.setDate(cutoff.getDate()-7);
   else if(range==='30d') cutoff.setDate(cutoff.getDate()-30);
   else return timeline;
+  // Normalize to midnight so date-only strings compare correctly
+  cutoff.setHours(0,0,0,0);
   const cutStr=cutoff.toISOString().slice(0,10);
   return timeline.filter(p=>p.date>=cutStr);
 }
@@ -1391,7 +1393,7 @@ function renderFunnel(data) {
   // Timeline sum helper for selected period
   const tlSum = (tl) => (tl||[]).filter(p=>{
     const d = new Date(p.date);
-    const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - days);
+    const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - days); cutoff.setHours(0,0,0,0);
     return d >= cutoff;
   }).reduce((acc,p) => acc + p.value, 0);
 
