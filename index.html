@@ -370,7 +370,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
       <div class="funnel-stage" style="--fc:var(--ig)">
         <div class="funnel-stage-name">Engagement</div>
         <div class="funnel-stage-val" id="fn-engagement">—</div>
-        <div class="funnel-stage-sub">Likes + Comments + Shares</div>
+        <div class="funnel-stage-sub" id="fn-engagement-sub">Likes + Comments + Reposts</div>
         <div class="funnel-delta neu" id="fn-engagement-delta">● SYNCING</div>
       </div>
       <div class="funnel-stage" style="--fc:var(--orange)">
@@ -1411,18 +1411,27 @@ function renderFunnel(data) {
     }
   };
 
-  // 1. Views (top of funnel) — TikTok period views from Metricool
-  // YouTube all-time total excluded (not a period metric)
-  const ttViewsPeriod = tlSum(mcTt.timeline?.views);
+  // 1. Views — impressions + views across ALL platforms (best available per platform)
+  // X: impressions | IG: impressions | TikTok: views | YouTube: not period-based, excluded
+  const xViews  = tlSum(mcX.timeline?.impressions);
+  const igViews = tlSum(mcIg.timeline?.impressions);
+  const ttViews = tlSum(mcTt.timeline?.views);
+  const viewsTotal = xViews + igViews + ttViews;
   const subLabel = document.getElementById('fn-views-sub');
-  if (subLabel) subLabel.textContent = days === 1 ? 'TikTok (today)' : `TikTok (${days}d)`;
-  setFn('fn-views', 'fn-views-delta', ttViewsPeriod, 0);
+  if (subLabel) subLabel.textContent = 'X + IG + TikTok';
+  setFn('fn-views', 'fn-views-delta', viewsTotal, 0);
 
-  // 2. Engagement
-  const xEng   = tlSum(mcX.timeline?.engagements);
-  const igEng  = tlSum(mcIg.timeline?.likes) + tlSum(mcIg.timeline?.comments);
-  const ttEng  = tlSum(mcTt.timeline?.likes) + tlSum(mcTt.timeline?.comments) + tlSum(mcTt.timeline?.shares);
-  const engTotal = xEng + igEng + ttEng;
+  // 2. Engagement — likes + comments + reposts across ALL platforms
+  const xLikes    = tlSum(mcX.timeline?.likes);
+  const xRt       = tlSum(mcX.timeline?.retweets);
+  const igLikes   = tlSum(mcIg.timeline?.likes);
+  const igComments= tlSum(mcIg.timeline?.comments);
+  const ttLikes   = tlSum(mcTt.timeline?.likes);
+  const ttComments= tlSum(mcTt.timeline?.comments);
+  const ttShares  = tlSum(mcTt.timeline?.shares);
+  const engTotal  = xLikes + xRt + igLikes + igComments + ttLikes + ttComments + ttShares;
+  const subEngLabel = document.getElementById('fn-engagement-sub');
+  if (subEngLabel) subEngLabel.textContent = 'Likes + Comments + Reposts';
   setFn('fn-engagement', 'fn-engagement-delta', engTotal, 0);
 
   // 3. Visits — GA period data
