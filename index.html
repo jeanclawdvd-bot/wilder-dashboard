@@ -228,7 +228,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .funnel-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
 .funnel-week{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:2px;margin-bottom:16px}
 .funnel-stages{display:grid;grid-template-columns:1fr;gap:2px;margin-bottom:20px}
-@media(min-width:640px){.funnel-stages{grid-template-columns:repeat(5,1fr);gap:0}}
+@media(min-width:640px){#funnel-stages-inner{grid-template-columns:repeat(4,1fr);gap:0}}
+.funnel-period-btn{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;padding:4px 10px;background:transparent;border:1px solid var(--border);color:var(--text);cursor:pointer;transition:all 0.15s}
+.funnel-period-btn:hover{border-color:var(--orange);color:var(--orange)}
+.funnel-period-btn.active{background:rgba(255,100,52,0.12);border-color:var(--orange);color:var(--orange)}
 .funnel-stage{background:var(--card);border:1px solid var(--border);padding:20px 16px;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
 .funnel-stage::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--fc,var(--orange));box-shadow:0 0 12px var(--fc,var(--orange))}
 @media(min-width:640px){
@@ -344,19 +347,23 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   <div id="tab-overview" class="tab-content active">
 
     <!-- FUNNEL -->
-    <div class="funnel-label">// THIS WEEK'S FUNNEL</div>
-    <div class="funnel-week" id="funnel-week-label">Loading...</div>
-    <div class="funnel-stages">
-      <div class="funnel-stage" style="--fc:#E7E7E7">
-        <div class="funnel-stage-name">Impressions</div>
-        <div class="funnel-stage-val" id="fn-impressions">—</div>
-        <div class="funnel-stage-sub">X + IG + TikTok</div>
-        <div class="funnel-delta neu" id="fn-impressions-delta">● SYNCING</div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:4px">
+      <div>
+        <div class="funnel-label">// FUNNEL</div>
+        <div class="funnel-week" id="funnel-week-label">Loading...</div>
       </div>
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        <button class="funnel-period-btn active" onclick="setFunnelPeriod(1,this)">1D</button>
+        <button class="funnel-period-btn" onclick="setFunnelPeriod(7,this)">7D</button>
+        <button class="funnel-period-btn" onclick="setFunnelPeriod(30,this)">30D</button>
+      </div>
+    </div>
+    <div class="funnel-stages" style="grid-template-columns:1fr">
+      <div style="display:grid;grid-template-columns:1fr;gap:2px" id="funnel-stages-inner">
       <div class="funnel-stage" style="--fc:var(--yt)">
         <div class="funnel-stage-name">Views</div>
         <div class="funnel-stage-val" id="fn-views">—</div>
-        <div class="funnel-stage-sub">YouTube + TikTok</div>
+        <div class="funnel-stage-sub" id="fn-views-sub">YouTube + TikTok</div>
         <div class="funnel-delta neu" id="fn-views-delta">● LOADING</div>
       </div>
       <div class="funnel-stage" style="--fc:var(--ig)">
@@ -376,6 +383,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div class="funnel-stage-val" id="fn-sales">—</div>
         <div class="funnel-stage-sub">Wilder Packs sold</div>
         <div class="funnel-delta neu" id="fn-sales-delta">● LOADING</div>
+      </div>
       </div>
     </div>
 
@@ -793,8 +801,14 @@ function mnavActivate(btn){
 function fmt(n){if(!n&&n!==0)return'—';n=parseInt(n)||0;if(n>=1000000)return(n/1000000).toFixed(1)+'M';if(n>=1000)return(n/1000).toFixed(1)+'K';return n.toString();}
 function fmt2(n){if(!n&&n!==0)return'0';n=Number(n);if(n>=1000000)return(n/1000000).toFixed(1)+'M';if(n>=1000)return(n/1000).toFixed(1)+'K';return Math.round(n).toString();}
 
-let state = {history:{yt:[],tt:[],ig:[],x:[],dau:[]},dau:0,platforms:{yt:{},tt:{},ig:{},x:{},ga:{},mc:{}}};
+let state = {history:{yt:[],tt:[],ig:[],x:[],dau:[]},dau:0,platforms:{yt:{},tt:{},ig:{},x:{},ga:{},mc:{}},funnelData:null,funnelPeriod:7};
 let seriesVisible = {yt:true,tt:true,ig:true,x:true};
+function setFunnelPeriod(days,btn){
+  state.funnelPeriod=days;
+  document.querySelectorAll('.funnel-period-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(state.funnelData) renderFunnel(state.funnelData);
+}
 
 function toggleSeries(key,el){
   if(key==='all'){
@@ -1308,6 +1322,8 @@ function delta(current, previous, suffix='') {
 }
 
 function renderFunnel(data) {
+  state.funnelData = data;
+  const days = state.funnelPeriod || 7;
   const mc  = data.metricool || {};
   const mcX = mc.x || {};
   const mcIg = mc.instagram || {};
@@ -1317,33 +1333,28 @@ function renderFunnel(data) {
   const yt  = data.youtube || {};
   const tt  = data.tiktok || {};
 
-  // Week label
+  // Period label
   const now = new Date();
-  const weekStart = new Date(now); weekStart.setDate(now.getDate() - 6);
+  const periodStart = new Date(now); periodStart.setDate(now.getDate() - (days - 1));
   const fmtDate = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
   const el = document.getElementById('funnel-week-label');
-  if (el) el.textContent = `// ${fmtDate(weekStart)} — ${fmtDate(now)}`;
+  if (el) el.textContent = days === 1 ? `// Today, ${fmtDate(now)}` : `// ${fmtDate(periodStart)} — ${fmtDate(now)}`;
 
   // ── Follower summary row ──
   const s = (id, v) => { const e=document.getElementById(id); if(e) e.textContent=fmt2(v); };
-  s('fn-yt-subs',    yt.subscribers || 0);
+  s('fn-yt-subs',      yt.subscribers || 0);
   s('fn-tt-followers', tt.followers || 0);
   s('fn-ig-followers', data.instagram?.followers || 0);
   s('fn-x-followers',  data.x?.followers || 0);
 
-  // ── Funnel stages ──
-  // 1. Impressions (Metricool 7d sum)
-  const tlSum7 = (tl) => (tl||[]).filter(p=>{
-    const d=new Date(p.date); const cutoff=new Date(); cutoff.setDate(cutoff.getDate()-7);
-    return d>=cutoff;
-  }).reduce((s,p)=>s+p.value, 0);
+  // Timeline sum helper for selected period
+  const tlSum = (tl) => (tl||[]).filter(p=>{
+    const d = new Date(p.date);
+    const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - days);
+    return d >= cutoff;
+  }).reduce((acc,p) => acc + p.value, 0);
 
-  const xImp7  = tlSum7(mcX.timeline?.impressions);
-  const igImp7 = tlSum7(mcIg.timeline?.impressions);
-  const ttViews7 = tlSum7(mcTt.timeline?.views);
-  const impressions7 = xImp7 + igImp7 + ttViews7;
-
-  const setFn = (id, valId, deltaId, val, prev) => {
+  const setFn = (valId, deltaId, val, prev) => {
     const ve = document.getElementById(valId);
     const de = document.getElementById(deltaId);
     if (ve) ve.textContent = val > 0 ? fmt(val) : '—';
@@ -1359,37 +1370,39 @@ function renderFunnel(data) {
     }
   };
 
-  // 2. Views (TikTok views 7d + YouTube total)
-  const views7 = ttViews7 + (yt.views || 0);
+  // 1. Views (top of funnel) — YouTube all-time views for 1d use recent video; for period use YT total
+  const ttViewsPeriod = tlSum(mcTt.timeline?.views);
+  // For YouTube, use total views as proxy (API doesn't give period breakdown)
+  const ytViews = yt.views || 0;
+  const viewsTotal = ttViewsPeriod + ytViews;
+  const subLabel = document.getElementById('fn-views-sub');
+  if (subLabel) subLabel.textContent = days === 1 ? 'YouTube + TikTok (today)' : `YouTube + TikTok (${days}d)`;
+  setFn('fn-views', 'fn-views-delta', viewsTotal, 0);
 
-  // 3. Engagement (likes + comments + shares 7d across platforms)
-  const xEng7   = tlSum7(mcX.timeline?.engagements);
-  const igEng7  = tlSum7(mcIg.timeline?.likes) + tlSum7(mcIg.timeline?.comments);
-  const ttEng7  = tlSum7(mcTt.timeline?.likes) + tlSum7(mcTt.timeline?.comments) + tlSum7(mcTt.timeline?.shares);
-  const eng7 = xEng7 + igEng7 + ttEng7;
+  // 2. Engagement
+  const xEng   = tlSum(mcX.timeline?.engagements);
+  const igEng  = tlSum(mcIg.timeline?.likes) + tlSum(mcIg.timeline?.comments);
+  const ttEng  = tlSum(mcTt.timeline?.likes) + tlSum(mcTt.timeline?.comments) + tlSum(mcTt.timeline?.shares);
+  const engTotal = xEng + igEng + ttEng;
+  setFn('fn-engagement', 'fn-engagement-delta', engTotal, 0);
 
-  // 4. Visits (GA4 7d sessions)
-  const visits7 = ga.week?.sessions || 0;
-  const visitsLast = ga.last_week?.sessions || 0;
-
-  // 5. Sales (packs 7d)
-  const sales7 = ps.total_7d || 0;
-  const daily = ps.daily || [];
-  const salesLast = daily.slice(-14, -7).reduce((s,x) => s + (x.totalSold||0), 0);
-
-  setFn('fn', 'fn-impressions', 'fn-impressions-delta', impressions7, 0);
-  setFn('fn', 'fn-views',       'fn-views-delta',       views7, 0);
-  setFn('fn', 'fn-engagement',  'fn-engagement-delta',  eng7, 0);
-
+  // 3. Visits — GA period data
+  const gaVisits = days <= 1 ? (ga.today?.sessions || 0) : (days <= 7 ? (ga.week?.sessions || 0) : (ga.month?.sessions || ga.week?.sessions || 0));
+  const gaVisitsLast = ga.last_week?.sessions || 0;
   const veV = document.getElementById('fn-visits');
   const deV = document.getElementById('fn-visits-delta');
-  if (veV) veV.textContent = fmt(visits7);
-  if (deV) { const d=delta(visits7, visitsLast); deV.textContent=d.txt; deV.className='funnel-delta '+d.cls; }
+  if (veV) veV.textContent = gaVisits > 0 ? fmt(gaVisits) : '—';
+  if (deV) { if(gaVisits > 0){ const d=delta(gaVisits,gaVisitsLast); deV.textContent=d.txt; deV.className='funnel-delta '+d.cls; } else { deV.textContent='● SYNCING'; deV.className='funnel-delta neu'; } }
 
+  // 4. Sales — pack sales for period
+  const daily = ps.daily || [];
+  const cutoffDate = new Date(); cutoffDate.setDate(cutoffDate.getDate() - days);
+  const salesPeriod = daily.filter(d => new Date(d.date) >= cutoffDate).reduce((a,d) => a + (d.totalSold||0), 0);
+  const salesLast   = daily.slice(-14, -7).reduce((a,d) => a + (d.totalSold||0), 0);
   const veS = document.getElementById('fn-sales');
   const deS = document.getElementById('fn-sales-delta');
-  if (veS) veS.textContent = fmt(sales7);
-  if (deS) { const d=delta(sales7, salesLast); deS.textContent=d.txt; deS.className='funnel-delta '+d.cls; }
+  if (veS) veS.textContent = fmt(salesPeriod);
+  if (deS) { const d=delta(salesPeriod,salesLast); deS.textContent=d.txt; deS.className='funnel-delta '+d.cls; }
 }
 
 /* Channel tab rendering is called after switchTab in the HTML onclick */
