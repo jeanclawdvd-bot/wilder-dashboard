@@ -228,7 +228,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .funnel-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
 .funnel-week{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:2px;margin-bottom:16px}
 .funnel-stages{display:grid;grid-template-columns:1fr;gap:2px;margin-bottom:20px}
-@media(min-width:640px){#funnel-stages-inner{grid-template-columns:repeat(4,1fr);gap:0}}
+@media(min-width:640px){.funnel-stages{grid-template-columns:1fr!important}#funnel-stages-inner{grid-template-columns:repeat(4,1fr)!important;gap:0}}
 .funnel-period-btn{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;padding:4px 10px;background:transparent;border:1px solid var(--border);color:var(--text);cursor:pointer;transition:all 0.15s}
 .funnel-period-btn:hover{border-color:var(--orange);color:var(--orange)}
 .funnel-period-btn.active{background:rgba(255,100,52,0.12);border-color:var(--orange);color:var(--orange)}
@@ -358,7 +358,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <button class="funnel-period-btn" onclick="setFunnelPeriod(30,this)">30D</button>
       </div>
     </div>
-    <div class="funnel-stages" style="grid-template-columns:1fr">
+    <div class="funnel-stages">
       <div style="display:grid;grid-template-columns:1fr;gap:2px" id="funnel-stages-inner">
       <div class="funnel-stage" style="--fc:var(--yt)">
         <div class="funnel-stage-name">Views</div>
@@ -1370,14 +1370,12 @@ function renderFunnel(data) {
     }
   };
 
-  // 1. Views (top of funnel) — YouTube all-time views for 1d use recent video; for period use YT total
+  // 1. Views (top of funnel) — TikTok period views from Metricool
+  // YouTube all-time total excluded (not a period metric)
   const ttViewsPeriod = tlSum(mcTt.timeline?.views);
-  // For YouTube, use total views as proxy (API doesn't give period breakdown)
-  const ytViews = yt.views || 0;
-  const viewsTotal = ttViewsPeriod + ytViews;
   const subLabel = document.getElementById('fn-views-sub');
-  if (subLabel) subLabel.textContent = days === 1 ? 'YouTube + TikTok (today)' : `YouTube + TikTok (${days}d)`;
-  setFn('fn-views', 'fn-views-delta', viewsTotal, 0);
+  if (subLabel) subLabel.textContent = days === 1 ? 'TikTok (today)' : `TikTok (${days}d)`;
+  setFn('fn-views', 'fn-views-delta', ttViewsPeriod, 0);
 
   // 2. Engagement
   const xEng   = tlSum(mcX.timeline?.engagements);
