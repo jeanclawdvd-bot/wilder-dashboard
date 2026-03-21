@@ -223,6 +223,34 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .velocity-label{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-bottom:2px}
 .velocity-val{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px}
 
+/* ══════════════════ FUNNEL ══════════════════ */
+.funnel-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:4px;color:var(--orange);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.funnel-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+.funnel-week{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:2px;margin-bottom:16px}
+.funnel-stages{display:grid;grid-template-columns:1fr;gap:2px;margin-bottom:20px}
+@media(min-width:640px){.funnel-stages{grid-template-columns:repeat(5,1fr);gap:0}}
+.funnel-stage{background:var(--card);border:1px solid var(--border);padding:20px 16px;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.funnel-stage::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--fc,var(--orange));box-shadow:0 0 12px var(--fc,var(--orange))}
+@media(min-width:640px){
+  .funnel-stage:not(:last-child)::after{
+    content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);
+    color:var(--orange);font-size:18px;z-index:2;background:var(--dark);padding:2px 0;
+  }
+}
+.funnel-stage-name{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--text);text-transform:uppercase;margin-bottom:10px}
+.funnel-stage-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,52px);line-height:1;color:var(--white);letter-spacing:2px;margin-bottom:6px}
+.funnel-stage-sub{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-bottom:10px}
+.funnel-delta{display:inline-flex;align-items:center;gap:4px;font-family:'Share Tech Mono',monospace;font-size:10px;padding:3px 9px;border-radius:2px}
+.funnel-delta.up{background:rgba(0,255,136,0.08);color:var(--green);border:1px solid rgba(0,255,136,0.2)}
+.funnel-delta.down{background:rgba(255,45,135,0.08);color:var(--pink);border:1px solid rgba(255,45,135,0.2)}
+.funnel-delta.neu{background:rgba(255,255,255,0.03);color:var(--text);border:1px solid var(--border)}
+.funnel-conversion{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);margin-top:8px;letter-spacing:1px}
+.funnel-secondary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+@media(min-width:900px){.funnel-secondary{grid-template-columns:repeat(4,1fr)}}
+.funnel-sec-card{background:var(--card);border:1px solid var(--border);padding:14px;position:relative;overflow:hidden}
+.funnel-sec-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--fc,var(--orange));box-shadow:0 0 8px var(--fc,var(--orange))}
+.funnel-sec-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3vw,28px);line-height:1;margin-bottom:3px}
+.funnel-sec-lbl{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px}
 /* ══════════════════ CHANNEL ANALYTICS ══════════════════ */
 .ch-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
 .ch-title{display:flex;align-items:center;gap:10px}
@@ -314,88 +342,65 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 
   <!-- ════════════════ OVERVIEW TAB ════════════════ -->
   <div id="tab-overview" class="tab-content active">
-    <div class="section-label">// Platform Metrics</div>
-    <div class="metrics-row">
-      <div class="metric-card youtube">
-        <div class="platform-header"><span class="platform-name">YouTube</span><span class="platform-icon">▶</span></div>
-        <div class="metric-value" id="yt-val">—</div>
-        <div class="metric-label">SUBSCRIBERS</div>
-        <span class="metric-delta pending" id="yt-delta">● LOADING</span>
-        <div class="metric-sub">
-          <span class="metric-sub-label">TOTAL VIEWS</span>
-          <span class="metric-sub-val" style="color:var(--yt)" id="yt-imp">—</span>
-        </div>
+
+    <!-- FUNNEL -->
+    <div class="funnel-label">// THIS WEEK'S FUNNEL</div>
+    <div class="funnel-week" id="funnel-week-label">Loading...</div>
+    <div class="funnel-stages">
+      <div class="funnel-stage" style="--fc:#E7E7E7">
+        <div class="funnel-stage-name">Impressions</div>
+        <div class="funnel-stage-val" id="fn-impressions">—</div>
+        <div class="funnel-stage-sub">X + IG + TikTok</div>
+        <div class="funnel-delta neu" id="fn-impressions-delta">● SYNCING</div>
       </div>
-      <div class="metric-card tiktok">
-        <div class="platform-header"><span class="platform-name">TikTok</span><span class="platform-icon">♪</span></div>
-        <div class="metric-value" id="tt-val">—</div>
-        <div class="metric-label">FOLLOWERS</div>
-        <span class="metric-delta pending" id="tt-delta">● LOADING</span>
-        <div class="metric-sub">
-          <span class="metric-sub-label">TOTAL LIKES</span>
-          <span class="metric-sub-val" style="color:var(--tiktok)" id="tt-imp">—</span>
-        </div>
+      <div class="funnel-stage" style="--fc:var(--yt)">
+        <div class="funnel-stage-name">Views</div>
+        <div class="funnel-stage-val" id="fn-views">—</div>
+        <div class="funnel-stage-sub">YouTube + TikTok</div>
+        <div class="funnel-delta neu" id="fn-views-delta">● LOADING</div>
       </div>
-      <div class="metric-card instagram">
-        <div class="platform-header"><span class="platform-name">Instagram</span><span class="platform-icon">◎</span></div>
-        <div class="metric-value" id="ig-val">—</div>
-        <div class="metric-label">FOLLOWERS</div>
-        <span class="metric-delta pending" id="ig-delta">● LOADING</span>
-        <div class="metric-sub">
-          <span class="metric-sub-label">POSTS</span>
-          <span class="metric-sub-val" style="color:var(--ig)" id="ig-imp">—</span>
-        </div>
+      <div class="funnel-stage" style="--fc:var(--ig)">
+        <div class="funnel-stage-name">Engagement</div>
+        <div class="funnel-stage-val" id="fn-engagement">—</div>
+        <div class="funnel-stage-sub">Likes + Comments + Shares</div>
+        <div class="funnel-delta neu" id="fn-engagement-delta">● SYNCING</div>
       </div>
-      <div class="metric-card x">
-        <div class="platform-header"><span class="platform-name">X / Twitter</span><span class="platform-icon">𝕏</span></div>
-        <div class="metric-value" id="x-val">—</div>
-        <div class="metric-label">FOLLOWERS</div>
-        <span class="metric-delta pending" id="x-delta">● LOADING</span>
-        <div class="metric-sub">
-          <span class="metric-sub-label">TWEETS</span>
-          <span class="metric-sub-val" style="color:var(--x)" id="x-imp">—</span>
-        </div>
+      <div class="funnel-stage" style="--fc:var(--orange)">
+        <div class="funnel-stage-name">Visits</div>
+        <div class="funnel-stage-val" id="fn-visits">—</div>
+        <div class="funnel-stage-sub">wilderworld.com</div>
+        <div class="funnel-delta neu" id="fn-visits-delta">● LOADING</div>
+      </div>
+      <div class="funnel-stage" style="--fc:var(--pink)">
+        <div class="funnel-stage-name">Sales</div>
+        <div class="funnel-stage-val" id="fn-sales">—</div>
+        <div class="funnel-stage-sub">Wilder Packs sold</div>
+        <div class="funnel-delta neu" id="fn-sales-delta">● LOADING</div>
       </div>
     </div>
 
-    <div class="main-grid">
-      <div class="panel">
-        <div class="panel-title">YouTube Performance</div>
-        <div class="panel-sub">// CHANNEL STATS</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-          <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--yt)" id="yt-views">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIEWS</div>
-          </div>
-          <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--orange)" id="yt-videos-count">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIDEOS</div>
-          </div>
-        </div>
-        <div class="panel-sub">// RECENT UPLOADS</div>
-        <div class="yt-videos" id="yt-recent"></div>
+    <!-- FOLLOWER SUMMARY ROW -->
+    <div class="funnel-secondary">
+      <div class="funnel-sec-card" style="--fc:var(--yt)">
+        <div class="funnel-sec-val" style="color:var(--yt)" id="fn-yt-subs">—</div>
+        <div class="funnel-sec-lbl">YouTube Subs</div>
       </div>
-
-      <div class="panel">
-        <div class="panel-title">Total Reach</div>
-        <div class="panel-sub">// COMBINED AUDIENCE</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,64px);color:var(--orange);text-shadow:0 0 30px rgba(255,100,52,0.4);line-height:1;letter-spacing:2px;margin-bottom:6px" id="total-reach">—</div>
-        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:2px;margin-bottom:20px">TOTAL FOLLOWERS ACROSS ALL PLATFORMS</div>
-        <div style="display:flex;flex-direction:column;gap:8px" id="reach-bars"></div>
+      <div class="funnel-sec-card" style="--fc:var(--tiktok)">
+        <div class="funnel-sec-val" style="color:var(--tiktok)" id="fn-tt-followers">—</div>
+        <div class="funnel-sec-lbl">TikTok Followers</div>
       </div>
-
-      <div class="panel feed-panel">
-        <div class="panel-title">Signal Feed</div>
-        <div class="panel-sub">// SYNC LOG</div>
-        <div id="feed-list" style="overflow-y:auto;max-height:320px;scrollbar-width:thin;scrollbar-color:var(--border) transparent">
-          <div class="feed-item"><div class="feed-dot" style="background:var(--orange)"></div><div class="feed-content"><div class="feed-title">Dashboard initialized</div><div class="feed-meta">SYSTEM // Just now</div></div></div>
-          <div class="feed-item"><div class="feed-dot" style="background:var(--yellow)"></div><div class="feed-content"><div class="feed-title">Awaiting data sync</div><div class="feed-meta">SYSTEM // Standby</div></div></div>
-          <div class="feed-item"><div class="feed-dot" style="background:var(--green)"></div><div class="feed-content"><div class="feed-title">YouTube API connected</div><div class="feed-meta">SYSTEM // Ready</div></div></div>
-        </div>
+      <div class="funnel-sec-card" style="--fc:var(--ig)">
+        <div class="funnel-sec-val" style="color:var(--ig)" id="fn-ig-followers">—</div>
+        <div class="funnel-sec-lbl">Instagram Followers</div>
+      </div>
+      <div class="funnel-sec-card" style="--fc:var(--x)">
+        <div class="funnel-sec-val" style="color:var(--x)" id="fn-x-followers">—</div>
+        <div class="funnel-sec-lbl">X Followers</div>
       </div>
     </div>
 
-    <div class="bottom-grid">
+    <!-- DAU + PACKS + Z CHAIN -->
+    <div class="bottom-grid" style="margin-bottom:16px">
       <div class="panel">
         <div class="panel-title">Daily Active Players</div>
         <div class="panel-sub">// LIVE FROM GAME SERVER</div>
@@ -403,32 +408,61 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div class="dau-target">TARGET: 10,000 DAU</div>
         <div class="progress-wrap"><div class="progress-bar" id="dau-bar" style="width:0%"></div></div>
         <div class="progress-label"><span>0</span><span id="dau-pct">0%</span><span>10K</span></div>
-        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--text);margin-bottom:8px">// PACK SALES</div>
-          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,36px);color:var(--pink);letter-spacing:2px" id="pack-sales-val">—</div>
-            <span class="metric-delta pending" id="pack-sales-status">● LOADING</span>
+      </div>
+      <div class="panel">
+        <div class="panel-title">Wilder Packs</div>
+        <div class="panel-sub">// Z CHAIN — ON-CHAIN DATA</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+          <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:10px;text-align:center">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--pink);line-height:1" id="pack-sales-val">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">TODAY</div>
+            <span class="metric-delta pending" id="pack-sales-status" style="font-size:8px;margin-top:4px;display:inline-flex">● LOADING</span>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-            <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:8px;text-align:center">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink)" id="pack-sales-7d">—</div>
-              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">7-DAY SOLD</div>
-            </div>
-            <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:8px;text-align:center">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink)" id="pack-sales-30d">—</div>
-              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">30-DAY SOLD</div>
-            </div>
-            <div style="background:rgba(255,45,135,0.06);border:1px solid rgba(255,45,135,0.2);padding:8px;text-align:center">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink)" id="pack-sales-alltime">—</div>
-              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">ALL-TIME SOLD</div>
-            </div>
-            <div style="background:rgba(255,45,135,0.06);border:1px solid rgba(255,45,135,0.2);padding:8px;text-align:center">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--orange)" id="pack-burned-alltime">—</div>
-              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">ALL-TIME OPENED</div>
-            </div>
+          <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:10px;text-align:center">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--pink);line-height:1" id="pack-sales-7d">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">7-DAY SOLD</div>
+          </div>
+          <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:10px;text-align:center">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--pink);line-height:1" id="pack-sales-alltime">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">ALL-TIME SOLD</div>
+          </div>
+          <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:10px;text-align:center">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--orange);line-height:1" id="pack-burned-alltime">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">ALL-TIME OPENED</div>
           </div>
         </div>
       </div>
+      <div class="panel">
+        <div class="panel-title" style="color:#a78bfa">Z Chain</div>
+        <div class="panel-sub">// zscan.live</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:10px;text-align:center;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,26px);color:#a78bfa;line-height:1" id="zc-txns-today">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">TXNs TODAY</div>
+          </div>
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:10px;text-align:center;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,26px);color:#a78bfa;line-height:1" id="zc-total-txns">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">TOTAL TXNs</div>
+          </div>
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:10px;text-align:center;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,26px);color:#a78bfa;line-height:1" id="zc-addresses">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">ADDRESSES</div>
+          </div>
+          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:10px;text-align:center;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0"></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,26px);color:#a78bfa;line-height:1" id="zc-blocks">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px;margin-top:3px">TOTAL BLOCKS</div>
+          </div>
+        </div>
+        <div id="zc-txns-list" style="overflow-y:auto;max-height:120px;scrollbar-width:thin;scrollbar-color:rgba(123,92,240,0.3) transparent"></div>
+      </div>
+    </div>
+
+    <!-- GA DETAIL + YOUTUBE -->
+    <div class="bottom-grid" style="margin-bottom:16px">
       <div class="panel">
         <div class="panel-title">Site Analytics</div>
         <div class="panel-sub">// GOOGLE ANALYTICS — TODAY</div>
@@ -454,56 +488,42 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Z CHAIN PANEL -->
-    <div class="section-label">// Z Chain — On-Chain Activity</div>
-    <div class="bottom-grid" style="margin-bottom:16px">
-      <div class="panel" style="--pc:#7B5CF0">
-        <div class="panel-title" style="color:#a78bfa">Z Chain Stats</div>
-        <div class="panel-sub">// zscan.live — LIVE</div>
+      <div class="panel">
+        <div class="panel-title">YouTube</div>
+        <div class="panel-sub">// CHANNEL STATS</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
-            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-txns-today">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TXNs TODAY</div>
+          <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--yt)" id="yt-views">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIEWS</div>
           </div>
-          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
-            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-total-txns">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL TXNs</div>
-          </div>
-          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
-            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-addresses">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">ADDRESSES</div>
-          </div>
-          <div style="background:rgba(123,92,240,0.05);border:1px solid rgba(123,92,240,0.15);padding:12px;position:relative;overflow:hidden">
-            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#7B5CF0;box-shadow:0 0 8px #7B5CF0"></div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:#a78bfa;line-height:1" id="zc-blocks">—</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL BLOCKS</div>
+          <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--orange)" id="yt-videos-count">—</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIDEOS</div>
           </div>
         </div>
-      </div>
-      <div class="panel" style="grid-column:span 2">
-        <div class="panel-title" style="color:#a78bfa">Recent Transactions</div>
-        <div class="panel-sub">// LATEST Z CHAIN ACTIVITY</div>
-        <div id="zc-txns-list" style="overflow-y:auto;max-height:240px;scrollbar-width:thin;scrollbar-color:rgba(123,92,240,0.3) transparent"></div>
+        <div class="panel-sub">// RECENT UPLOADS</div>
+        <div class="yt-videos" id="yt-recent"></div>
       </div>
     </div>
 
-    <div class="section-label">// Manual Override</div>
-    <div class="input-section">
-      <span class="input-label">DAU //</span>
-      <div class="input-group"><input class="metric-input" id="in-dau" placeholder="0" type="number"></div>
-      <div class="input-group"><span class="input-platform-label">EMAIL %</span><input class="metric-input" id="in-email-open" placeholder="0" type="number"></div>
-      <div class="input-group"><span class="input-platform-label">EMAIL SUBS</span><input class="metric-input" id="in-email-subs" placeholder="0" type="number"></div>
-      <button class="btn btn-cyan" onclick="saveManual()">SAVE</button>
+    <div style="text-align:right;margin-bottom:16px">
       <button class="btn btn-pink" id="refresh-btn" onclick="loadData()">⟳ REFRESH</button>
     </div>
   </div>
 
-  <!-- ════════════════ X TAB ════════════════ -->
+  <!-- keep old IDs alive but hidden so existing JS doesn't break -->
+  <div style="display:none">
+    <span id="yt-val"></span><span id="tt-val"></span><span id="ig-val"></span><span id="x-val"></span>
+    <span id="yt-delta"></span><span id="tt-delta"></span><span id="ig-delta"></span><span id="x-delta"></span>
+    <span id="yt-imp"></span><span id="tt-imp"></span><span id="ig-imp"></span><span id="x-imp"></span>
+    <span id="total-reach"></span><div id="reach-bars"></div>
+    <span id="pack-sales-30d"></span>
+    <div id="feed-list"></div>
+    <span id="in-dau"></span><span id="in-email-open"></span><span id="in-email-subs"></span>
+  </div>
+
+
+    <!-- ════════════════ X TAB ════════════════ -->
   <div id="tab-x" class="tab-content">
     <div class="ch-header">
       <div class="ch-title">
@@ -860,7 +880,7 @@ function renderData(data){
   });
 
   if(data.history) state.history=data.history;
-  drawChart(); renderGrowthTab();
+  drawChart(); renderGrowthTab(); renderFunnel(data);
 
   const dauData=data.dau||{};
   const dauToday=typeof dauData==='object'?(dauData.today||0):(dauData||0);
@@ -1276,6 +1296,100 @@ function renderChannelTab(ch){
     const dur=d.avg_session||0;
     document.getElementById('web-kpi-duration').textContent=Math.floor(dur/60)+'m '+Math.round(dur%60)+'s';
   }
+}
+
+/* ── FUNNEL RENDERING ── */
+function delta(current, previous, suffix='') {
+  if (!previous || previous === 0) return {txt: '● NEW', cls: 'neu'};
+  const pct = ((current - previous) / previous * 100).toFixed(1);
+  const sign = pct >= 0 ? '▲' : '▼';
+  const cls = pct >= 0 ? 'up' : 'down';
+  return {txt: sign + ' ' + Math.abs(pct) + '% vs last week', cls};
+}
+
+function renderFunnel(data) {
+  const mc  = data.metricool || {};
+  const mcX = mc.x || {};
+  const mcIg = mc.instagram || {};
+  const mcTt = mc.tiktok || {};
+  const ga  = data.ga || {};
+  const ps  = data.pack_sales || {};
+  const yt  = data.youtube || {};
+  const tt  = data.tiktok || {};
+
+  // Week label
+  const now = new Date();
+  const weekStart = new Date(now); weekStart.setDate(now.getDate() - 6);
+  const fmt = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+  const el = document.getElementById('funnel-week-label');
+  if (el) el.textContent = `// ${fmt(weekStart)} — ${fmt(now)}`;
+
+  // ── Follower summary row ──
+  const s = (id, v) => { const e=document.getElementById(id); if(e) e.textContent=fmt2(v); };
+  s('fn-yt-subs',    yt.subscribers || 0);
+  s('fn-tt-followers', tt.followers || 0);
+  s('fn-ig-followers', data.instagram?.followers || 0);
+  s('fn-x-followers',  data.x?.followers || 0);
+
+  // ── Funnel stages ──
+  // 1. Impressions (Metricool 7d sum)
+  const tlSum7 = (tl) => (tl||[]).filter(p=>{
+    const d=new Date(p.date); const cutoff=new Date(); cutoff.setDate(cutoff.getDate()-7);
+    return d>=cutoff;
+  }).reduce((s,p)=>s+p.value, 0);
+
+  const xImp7  = tlSum7(mcX.timeline?.impressions);
+  const igImp7 = tlSum7(mcIg.timeline?.impressions);
+  const ttViews7 = tlSum7(mcTt.timeline?.views);
+  const impressions7 = xImp7 + igImp7 + ttViews7;
+
+  const setFn = (id, valId, deltaId, val, prev) => {
+    const ve = document.getElementById(valId);
+    const de = document.getElementById(deltaId);
+    if (ve) ve.textContent = val > 0 ? fmt(val) : '—';
+    if (de) {
+      if (val > 0) {
+        const d = delta(val, prev);
+        de.textContent = d.txt;
+        de.className = 'funnel-delta ' + d.cls;
+      } else {
+        de.textContent = '● SYNCING';
+        de.className = 'funnel-delta neu';
+      }
+    }
+  };
+
+  // 2. Views (TikTok views 7d + YouTube total)
+  const views7 = ttViews7 + (yt.views || 0);
+
+  // 3. Engagement (likes + comments + shares 7d across platforms)
+  const xEng7   = tlSum7(mcX.timeline?.engagements);
+  const igEng7  = tlSum7(mcIg.timeline?.likes) + tlSum7(mcIg.timeline?.comments);
+  const ttEng7  = tlSum7(mcTt.timeline?.likes) + tlSum7(mcTt.timeline?.comments) + tlSum7(mcTt.timeline?.shares);
+  const eng7 = xEng7 + igEng7 + ttEng7;
+
+  // 4. Visits (GA4 7d sessions)
+  const visits7 = ga.week?.sessions || 0;
+  const visitsLast = ga.last_week?.sessions || 0;
+
+  // 5. Sales (packs 7d)
+  const sales7 = ps.total_7d || 0;
+  const daily = ps.daily || [];
+  const salesLast = daily.slice(-14, -7).reduce((s,x) => s + (x.totalSold||0), 0);
+
+  setFn('fn', 'fn-impressions', 'fn-impressions-delta', impressions7, 0);
+  setFn('fn', 'fn-views',       'fn-views-delta',       views7, 0);
+  setFn('fn', 'fn-engagement',  'fn-engagement-delta',  eng7, 0);
+
+  const veV = document.getElementById('fn-visits');
+  const deV = document.getElementById('fn-visits-delta');
+  if (veV) veV.textContent = fmt(visits7);
+  if (deV) { const d=delta(visits7, visitsLast); deV.textContent=d.txt; deV.className='funnel-delta '+d.cls; }
+
+  const veS = document.getElementById('fn-sales');
+  const deS = document.getElementById('fn-sales-delta');
+  if (veS) veS.textContent = fmt(sales7);
+  if (deS) { const d=delta(sales7, salesLast); deS.textContent=d.txt; deS.className='funnel-delta '+d.cls; }
 }
 
 /* Channel tab rendering is called after switchTab in the HTML onclick */
