@@ -1320,6 +1320,28 @@ function renderChannelTab(ch){
     document.getElementById('web-kpi-bounce').textContent=(d.bounce_rate||0)+'%';
     const dur=d.avg_session||0;
     document.getElementById('web-kpi-duration').textContent=Math.floor(dur/60)+'m '+Math.round(dur%60)+'s';
+    // Draw sessions chart from daily_history
+    const history = ga.daily_history||[];
+    const wrap = document.getElementById('web-chart-wrap');
+    if(wrap && history.length > 0){
+      wrap.innerHTML = '<canvas id="web-sessions-chart"></canvas>';
+      const labels = history.map(h=>h.date.slice(5)); // MM-DD
+      const sessions = history.map(h=>h.sessions);
+      const pageviews = history.map(h=>h.pageviews);
+      const ctx = document.getElementById('web-sessions-chart').getContext('2d');
+      if(window._webChart) window._webChart.destroy();
+      window._webChart = new Chart(ctx,{
+        type:'line',
+        data:{
+          labels,
+          datasets:[
+            {label:'Sessions',data:sessions,borderColor:'#FF6434',backgroundColor:'rgba(255,100,52,0.08)',borderWidth:2,pointRadius:2,tension:0.3,fill:true},
+            {label:'Pageviews',data:pageviews,borderColor:'rgba(255,100,52,0.4)',backgroundColor:'transparent',borderWidth:1,pointRadius:0,tension:0.3,borderDash:[4,4]}
+          ]
+        },
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,0.4)',font:{size:10}}}},scales:{x:{ticks:{color:'rgba(255,255,255,0.3)',font:{size:9},maxTicksLimit:10},grid:{color:'rgba(255,100,52,0.05)'}},y:{ticks:{color:'rgba(255,255,255,0.3)',font:{size:9}},grid:{color:'rgba(255,100,52,0.05)'}}}}
+      });
+    }
   }
 }
 
