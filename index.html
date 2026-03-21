@@ -8,8 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cyan:#00BFFF;--pink:#FF2D87;--dark:#000810;--card:#020F1E;
-  --border:#0A2540;--text:#8BAFC8;--white:#E0F0FF;
+  --orange:#FF6434;--pink:#FF2D87;--dark:#080808;--card:#0D0D0D;
+  --border:#1A1A1A;--text:rgba(255,255,255,0.4);--white:rgba(255,255,255,0.9);
   --green:#00FF88;--yellow:#FFD700;
   --x:#E7E7E7;--tiktok:#FF0050;--ig:#E1306C;--yt:#FF0000;
   --orange:#FF6434;--nav-h:56px;
@@ -19,31 +19,31 @@ html{font-size:16px}
 body{background:var(--dark);color:var(--white);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;padding-bottom:calc(var(--nav-h) + 8px)}
 
 /* ── GRID BACKGROUND ── */
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,191,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,191,255,0.025) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
-body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%, rgba(0,60,100,0.18) 0%, transparent 60%);pointer-events:none;z-index:0}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,100,52,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,100,52,0.025) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%, rgba(255,80,20,0.18) 0%, transparent 60%);pointer-events:none;z-index:0}
 
 /* ══════════════════ PASSWORD SCREEN ══════════════════ */
 #pw-screen{position:fixed;inset:0;background:#000810;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px}
 #pw-screen.hidden{display:none}
 .pw-box{width:100%;max-width:380px;text-align:center}
-.pw-logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,8vw,56px);color:var(--cyan);letter-spacing:6px;text-shadow:0 0 40px rgba(0,191,255,0.6);margin-bottom:6px}
+.pw-logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,8vw,56px);color:var(--orange);letter-spacing:6px;text-shadow:0 0 40px rgba(255,100,52,0.6);margin-bottom:6px}
 .pw-logo span{color:var(--pink)}
 .pw-sub{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--text);letter-spacing:4px;margin-bottom:48px}
 .pw-label{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
 .pw-input-wrap{position:relative;margin-bottom:16px}
-.pw-input{width:100%;background:rgba(0,191,255,0.06);border:1px solid var(--border);color:var(--white);font-family:'Share Tech Mono',monospace;font-size:18px;padding:16px 20px;letter-spacing:8px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;text-align:center}
-.pw-input:focus{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,191,255,0.15)}
+.pw-input{width:100%;background:rgba(255,100,52,0.06);border:1px solid var(--border);color:var(--white);font-family:'Share Tech Mono',monospace;font-size:18px;padding:16px 20px;letter-spacing:8px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;text-align:center}
+.pw-input:focus{border-color:var(--orange);box-shadow:0 0 20px rgba(255,100,52,0.15)}
 .pw-input::placeholder{color:var(--border);letter-spacing:4px}
-.pw-btn{width:100%;background:linear-gradient(135deg,var(--cyan),#0060AA);border:none;color:var(--dark);font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:4px;padding:16px;cursor:pointer;transition:opacity 0.2s,transform 0.1s}
+.pw-btn{width:100%;background:linear-gradient(135deg,var(--orange),#0060AA);border:none;color:var(--dark);font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:4px;padding:16px;cursor:pointer;transition:opacity 0.2s,transform 0.1s}
 .pw-btn:hover{opacity:0.85}
 .pw-btn:active{transform:scale(0.98)}
 .pw-error{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--pink);letter-spacing:2px;margin-top:12px;opacity:0;transition:opacity 0.3s}
 .pw-error.show{opacity:1}
 .pw-corner{position:absolute;width:12px;height:12px}
-.pw-corner.tl{top:0;left:0;border-top:1px solid var(--cyan);border-left:1px solid var(--cyan)}
-.pw-corner.tr{top:0;right:0;border-top:1px solid var(--cyan);border-right:1px solid var(--cyan)}
-.pw-corner.bl{bottom:0;left:0;border-bottom:1px solid var(--cyan);border-left:1px solid var(--cyan)}
-.pw-corner.br{bottom:0;right:0;border-bottom:1px solid var(--cyan);border-right:1px solid var(--cyan)}
+.pw-corner.tl{top:0;left:0;border-top:1px solid var(--orange);border-left:1px solid var(--orange)}
+.pw-corner.tr{top:0;right:0;border-top:1px solid var(--orange);border-right:1px solid var(--orange)}
+.pw-corner.bl{bottom:0;left:0;border-bottom:1px solid var(--orange);border-left:1px solid var(--orange)}
+.pw-corner.br{bottom:0;right:0;border-bottom:1px solid var(--orange);border-right:1px solid var(--orange)}
 .pw-frame{position:relative;padding:32px;border:1px solid var(--border);background:var(--card)}
 
 /* ══════════════════ LAYOUT ══════════════════ */
@@ -52,7 +52,7 @@ body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse
 
 /* ── HEADER ── */
 header{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--border);gap:12px;flex-wrap:wrap}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,6vw,42px);color:var(--cyan);letter-spacing:4px;text-shadow:0 0 30px rgba(0,191,255,0.5);line-height:1;white-space:nowrap}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,6vw,42px);color:var(--orange);letter-spacing:4px;text-shadow:0 0 30px rgba(255,100,52,0.5);line-height:1;white-space:nowrap}
 .logo span{color:var(--pink)}
 .subtitle{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:2px;margin-top:3px}
 .live-indicator{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--green);letter-spacing:2px;white-space:nowrap}
@@ -65,8 +65,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .tab-bar{display:none;align-items:flex-end;gap:0;margin-bottom:16px;border-bottom:1px solid var(--border)}
 @media(min-width:640px){.tab-bar{display:flex}}
 .tab{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:3px;padding:12px 20px;cursor:pointer;color:var(--text);border:1px solid transparent;border-bottom:none;margin-bottom:-1px;transition:all 0.2s;text-transform:uppercase;user-select:none;white-space:nowrap}
-.tab:hover{color:var(--cyan)}
-.tab.active{color:var(--cyan);background:var(--card);border-color:var(--border);border-bottom-color:var(--card)}
+.tab:hover{color:var(--orange)}
+.tab.active{color:var(--orange);background:var(--card);border-color:var(--border);border-bottom-color:var(--card)}
 .tab-content{display:none}
 .tab-content.active{display:block}
 
@@ -74,11 +74,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .mobile-nav{position:fixed;bottom:0;left:0;right:0;height:var(--nav-h);background:rgba(2,15,30,0.95);border-top:1px solid var(--border);backdrop-filter:blur(12px);display:flex;z-index:100}
 @media(min-width:640px){.mobile-nav{display:none}}
 .mnav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--text);cursor:pointer;border:none;background:transparent;padding:8px;transition:color 0.2s}
-.mnav-btn.active{color:var(--cyan)}
+.mnav-btn.active{color:var(--orange)}
 .mnav-icon{font-size:18px;line-height:1}
 
 /* ── STATUS BAR ── */
-.status-bar{background:rgba(0,191,255,0.03);border:1px solid var(--border);padding:10px 14px;margin:12px 0 16px;display:flex;align-items:center;gap:12px;font-family:'Share Tech Mono',monospace;font-size:10px;flex-wrap:wrap;overflow-x:auto}
+.status-bar{background:rgba(255,100,52,0.03);border:1px solid var(--border);padding:10px 14px;margin:12px 0 16px;display:flex;align-items:center;gap:12px;font-family:'Share Tech Mono',monospace;font-size:10px;flex-wrap:wrap;overflow-x:auto}
 .status-item{display:flex;align-items:center;gap:5px;white-space:nowrap}
 .sdot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .sdot.ok{background:var(--green);box-shadow:0 0 6px var(--green)}
@@ -87,16 +87,16 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .last-sync{margin-left:auto;color:var(--text);font-size:9px;white-space:nowrap}
 
 /* ── SECTION LABEL ── */
-.section-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.section-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:12px}
 .section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
 
 /* ══════════════════ METRIC CARDS ══════════════════ */
 .metrics-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
 @media(min-width:900px){.metrics-row{grid-template-columns:repeat(4,1fr);gap:14px}}
 .metric-card{background:var(--card);border:1px solid var(--border);padding:16px;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.2s}
-.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc,var(--cyan));box-shadow:0 0 12px var(--pc,var(--cyan))}
-.metric-card::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--pc,var(--cyan));border-right:1px solid var(--pc,var(--cyan));opacity:0.4}
-.metric-card:active,.metric-card:hover{border-color:var(--pc,var(--cyan));transform:translateY(-2px)}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc,var(--orange));box-shadow:0 0 12px var(--pc,var(--orange))}
+.metric-card::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--pc,var(--orange));border-right:1px solid var(--pc,var(--orange));opacity:0.4}
+.metric-card:active,.metric-card:hover{border-color:var(--pc,var(--orange));transform:translateY(-2px)}
 .metric-card.youtube{--pc:var(--yt)}.metric-card.tiktok{--pc:var(--tiktok)}.metric-card.instagram{--pc:var(--ig)}.metric-card.x{--pc:var(--x)}
 .platform-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .platform-name{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--text);text-transform:uppercase}
@@ -113,7 +113,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 
 /* ══════════════════ PANELS ══════════════════ */
 .panel{background:var(--card);border:1px solid var(--border);padding:18px;position:relative;overflow:hidden}
-.panel::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--cyan);border-right:1px solid var(--cyan);opacity:0.25}
+.panel::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--orange);border-right:1px solid var(--orange);opacity:0.25}
 .panel-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--white);margin-bottom:2px}
 .panel-sub{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:2px;margin-bottom:16px}
 
@@ -136,22 +136,22 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .yt-video-views{font-family:'Share Tech Mono',monospace;color:var(--yt);font-size:10px;flex-shrink:0}
 
 /* DAU */
-.dau-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,64px);color:var(--cyan);text-shadow:0 0 30px rgba(0,191,255,0.4);line-height:1;letter-spacing:2px}
+.dau-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,64px);color:var(--orange);text-shadow:0 0 30px rgba(255,100,52,0.4);line-height:1;letter-spacing:2px}
 .dau-target{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:2px;margin:6px 0 12px}
 .progress-wrap{height:5px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;margin-bottom:6px}
-.progress-bar{height:100%;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:3px;box-shadow:0 0 10px rgba(0,191,255,0.5);transition:width 1.5s ease}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--orange),var(--pink));border-radius:3px;box-shadow:0 0 10px rgba(255,100,52,0.5);transition:width 1.5s ease}
 .progress-label{display:flex;justify-content:space-between;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:1px}
 
 /* Email stats */
 .email-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
-.email-stat{background:rgba(0,191,255,0.04);border:1px solid var(--border);padding:10px;text-align:center}
-.email-stat-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,5vw,30px);color:var(--cyan);letter-spacing:1px;line-height:1}
+.email-stat{background:rgba(255,100,52,0.04);border:1px solid var(--border);padding:10px;text-align:center}
+.email-stat-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,5vw,30px);color:var(--orange);letter-spacing:1px;line-height:1}
 .email-stat-label{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px}
 
 /* Schedule */
 .schedule-list{display:flex;flex-direction:column;gap:6px}
 .schedule-item{display:flex;align-items:center;gap:10px;padding:9px 10px;background:rgba(255,255,255,0.02);border-left:2px solid transparent;transition:background 0.2s}
-.schedule-item.active{border-left-color:var(--cyan);background:rgba(0,191,255,0.05)}
+.schedule-item.active{border-left-color:var(--orange);background:rgba(255,100,52,0.05)}
 .schedule-item.done{border-left-color:var(--green);opacity:0.55}
 .schedule-item.upcoming{border-left-color:var(--border)}
 .schedule-day{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--text);width:26px;flex-shrink:0}
@@ -159,7 +159,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .schedule-status{font-family:'Share Tech Mono',monospace;font-size:9px;padding:2px 5px}
 .status-live{color:var(--green);background:rgba(0,255,136,0.08)}
 .status-done{color:var(--text)}
-.status-up{color:var(--cyan)}
+.status-up{color:var(--orange)}
 
 /* Feed */
 .feed-item{padding:10px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start}
@@ -171,23 +171,23 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 
 /* Input section */
 .input-section{background:var(--card);border:1px solid var(--border);padding:14px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.input-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--cyan);white-space:nowrap}
-.metric-input{background:rgba(0,191,255,0.05);border:1px solid var(--border);color:var(--white);font-family:'Share Tech Mono',monospace;font-size:13px;padding:7px 10px;width:100px;letter-spacing:1px;outline:none;transition:border-color 0.2s}
-.metric-input:focus{border-color:var(--cyan)}
+.input-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--orange);white-space:nowrap}
+.metric-input{background:rgba(255,100,52,0.05);border:1px solid var(--border);color:var(--white);font-family:'Share Tech Mono',monospace;font-size:13px;padding:7px 10px;width:100px;letter-spacing:1px;outline:none;transition:border-color 0.2s}
+.metric-input:focus{border-color:var(--orange)}
 .metric-input::placeholder{color:var(--text)}
 .input-group{display:flex;align-items:center;gap:6px}
 .input-platform-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:1px;white-space:nowrap}
 .btn{border:none;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;padding:9px 20px;cursor:pointer;transition:opacity 0.2s,transform 0.1s;flex-shrink:0}
 .btn:hover{opacity:0.85;transform:translateY(-1px)}
 .btn:active{transform:scale(0.97)}
-.btn-cyan{background:linear-gradient(135deg,var(--cyan),#0060AA);color:var(--dark)}
+.btn-cyan{background:linear-gradient(135deg,var(--orange),#0060AA);color:var(--dark)}
 .btn-pink{background:linear-gradient(135deg,var(--pink),#880033);color:var(--white)}
 
 /* ══════════════════ GROWTH TAB ══════════════════ */
 .growth-header{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
 @media(min-width:900px){.growth-header{grid-template-columns:repeat(4,1fr);gap:14px}}
 .growth-stat{background:var(--card);border:1px solid var(--border);padding:16px;position:relative;overflow:hidden}
-.growth-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc,var(--cyan));box-shadow:0 0 12px var(--pc,var(--cyan))}
+.growth-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc,var(--orange));box-shadow:0 0 12px var(--pc,var(--orange))}
 .growth-stat.c-yt{--pc:var(--yt)}.growth-stat.c-tt{--pc:var(--tiktok)}.growth-stat.c-ig{--pc:var(--ig)}.growth-stat.c-x{--pc:var(--x)}
 .growth-platform{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--text);margin-bottom:6px}
 .growth-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,38px);line-height:1;letter-spacing:2px;margin-bottom:2px}
@@ -196,12 +196,12 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .growth-change.pos{color:var(--green)}.growth-change.neg{color:var(--pink)}.growth-change.neu{color:var(--text)}
 
 .chart-full{background:var(--card);border:1px solid var(--border);padding:20px;margin-bottom:16px;position:relative}
-.chart-full::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--cyan);border-right:1px solid var(--cyan);opacity:0.25}
+.chart-full::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:1px solid var(--orange);border-right:1px solid var(--orange);opacity:0.25}
 .chart-controls{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .chart-toggle{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;padding:4px 12px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;transition:all 0.2s;text-transform:uppercase}
-.chart-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
-.chart-toggle.on{border-color:var(--pc,var(--cyan));color:var(--pc,var(--cyan));background:rgba(0,191,255,0.05)}
-.chart-toggle.yt{--pc:var(--yt)}.chart-toggle.tt{--pc:var(--tiktok)}.chart-toggle.ig{--pc:var(--ig)}.chart-toggle.x{--pc:var(--x)}.chart-toggle.all{--pc:var(--cyan)}
+.chart-toggle:hover{border-color:var(--orange);color:var(--orange)}
+.chart-toggle.on{border-color:var(--pc,var(--orange));color:var(--pc,var(--orange));background:rgba(255,100,52,0.05)}
+.chart-toggle.yt{--pc:var(--yt)}.chart-toggle.tt{--pc:var(--tiktok)}.chart-toggle.ig{--pc:var(--ig)}.chart-toggle.x{--pc:var(--x)}.chart-toggle.all{--pc:var(--orange)}
 .chart-canvas-wrap{position:relative;height:240px}
 @media(min-width:640px){.chart-canvas-wrap{height:300px}}
 .chart-canvas-wrap canvas{width:100%!important;height:100%!important}
@@ -329,7 +329,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
             <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIEWS</div>
           </div>
           <div style="background:rgba(255,0,0,0.04);border:1px solid var(--border);padding:12px">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--cyan)" id="yt-videos-count">—</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,4vw,30px);color:var(--orange)" id="yt-videos-count">—</div>
             <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:2px;margin-top:3px">TOTAL VIDEOS</div>
           </div>
         </div>
@@ -340,7 +340,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
       <div class="panel">
         <div class="panel-title">Total Reach</div>
         <div class="panel-sub">// COMBINED AUDIENCE</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,64px);color:var(--cyan);text-shadow:0 0 30px rgba(0,191,255,0.4);line-height:1;letter-spacing:2px;margin-bottom:6px" id="total-reach">—</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,64px);color:var(--orange);text-shadow:0 0 30px rgba(255,100,52,0.4);line-height:1;letter-spacing:2px;margin-bottom:6px" id="total-reach">—</div>
         <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:2px;margin-bottom:20px">TOTAL FOLLOWERS ACROSS ALL PLATFORMS</div>
         <div style="display:flex;flex-direction:column;gap:8px" id="reach-bars"></div>
       </div>
@@ -349,7 +349,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div class="panel-title">Signal Feed</div>
         <div class="panel-sub">// SYNC LOG</div>
         <div id="feed-list">
-          <div class="feed-item"><div class="feed-dot" style="background:var(--cyan)"></div><div class="feed-content"><div class="feed-title">Dashboard initialized</div><div class="feed-meta">SYSTEM // Just now</div></div></div>
+          <div class="feed-item"><div class="feed-dot" style="background:var(--orange)"></div><div class="feed-content"><div class="feed-title">Dashboard initialized</div><div class="feed-meta">SYSTEM // Just now</div></div></div>
           <div class="feed-item"><div class="feed-dot" style="background:var(--yellow)"></div><div class="feed-content"><div class="feed-title">Awaiting data sync</div><div class="feed-meta">SYSTEM // Standby</div></div></div>
           <div class="feed-item"><div class="feed-dot" style="background:var(--green)"></div><div class="feed-content"><div class="feed-title">YouTube API connected</div><div class="feed-meta">SYSTEM // Ready</div></div></div>
         </div>
@@ -386,12 +386,12 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
           <div style="font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--text);margin-bottom:6px">// 7-DAY TOTALS</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-            <div style="background:rgba(0,191,255,0.04);border:1px solid var(--border);padding:8px;text-align:center">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--cyan)" id="ga-week-sessions">—</div>
+            <div style="background:rgba(255,100,52,0.04);border:1px solid var(--border);padding:8px;text-align:center">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--orange)" id="ga-week-sessions">—</div>
               <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">SESSIONS</div>
             </div>
-            <div style="background:rgba(0,191,255,0.04);border:1px solid var(--border);padding:8px;text-align:center">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--cyan)" id="ga-week-users">—</div>
+            <div style="background:rgba(255,100,52,0.04);border:1px solid var(--border);padding:8px;text-align:center">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--orange)" id="ga-week-users">—</div>
               <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">VISITORS</div>
             </div>
           </div>
@@ -731,15 +731,15 @@ function drawChart(){
     {data:state.history.yt,color:'#FF0000',label:'YT',  key:'yt'},
     {data:state.history.tt,color:'#FF0050',label:'TT',  key:'tt'},
     {data:state.history.ig,color:'#E1306C',label:'IG',  key:'ig'},
-    {data:state.history.x, color:'#00BFFF',label:'X',   key:'x'},
+    {data:state.history.x, color:'#FF6434',label:'X',   key:'x'},
   ].filter(s=>seriesVisible[s.key]);
 
   const allVals=series.flatMap(s=>s.data||[]).filter(v=>v>0);
-  ctx.fillStyle='rgba(0,8,16,0.4)';
+  ctx.fillStyle='rgba(8,8,8,0.4)';
   ctx.fillRect(PAD.left,PAD.top,cW,cH);
 
   if(!allVals.length){
-    ctx.fillStyle='rgba(0,191,255,0.2)';
+    ctx.fillStyle='rgba(255,100,52,0.2)';
     ctx.font='10px Share Tech Mono, monospace';
     ctx.textAlign='center';
     ctx.fillText('ACCUMULATING DATA — SYNCS DAILY',PAD.left+cW/2,PAD.top+cH/2);
@@ -750,15 +750,15 @@ function drawChart(){
   const minVal=Math.min(...allVals)*0.92,maxVal=Math.max(...allVals)*1.06||1,range=maxVal-minVal||1;
   for(let i=0;i<=4;i++){
     const y=PAD.top+cH-(i/4)*cH;
-    ctx.strokeStyle='rgba(0,191,255,0.07)';ctx.lineWidth=1;ctx.setLineDash([4,8]);
+    ctx.strokeStyle='rgba(255,100,52,0.07)';ctx.lineWidth=1;ctx.setLineDash([4,8]);
     ctx.beginPath();ctx.moveTo(PAD.left,y);ctx.lineTo(PAD.left+cW,y);ctx.stroke();
     ctx.setLineDash([]);
-    ctx.fillStyle='rgba(0,191,255,0.35)';ctx.font='8px Share Tech Mono, monospace';
+    ctx.fillStyle='rgba(255,100,52,0.35)';ctx.font='8px Share Tech Mono, monospace';
     ctx.textAlign='right';ctx.fillText(fmt2(minVal+(range*i/4)),PAD.left-4,y+3);
   }
   ctx.textAlign='left';
 
-  ctx.strokeStyle='rgba(0,191,255,0.15)';ctx.lineWidth=1;
+  ctx.strokeStyle='rgba(255,100,52,0.15)';ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(PAD.left,PAD.top);ctx.lineTo(PAD.left,PAD.top+cH);ctx.lineTo(PAD.left+cW,PAD.top+cH);ctx.stroke();
 
   series.forEach(({data,color})=>{
@@ -801,7 +801,7 @@ function saveManual(){
 
 function addFeed(title,meta){
   const list=document.getElementById('feed-list');
-  const colors=['var(--cyan)','var(--pink)','var(--green)','var(--yellow)'];
+  const colors=['var(--orange)','var(--pink)','var(--green)','var(--yellow)'];
   const color=colors[Math.floor(Math.random()*colors.length)];
   const item=document.createElement('div');item.className='feed-item';
   item.innerHTML=`<div class="feed-dot" style="background:${color}"></div><div class="feed-content"><div class="feed-title">${title}</div><div class="feed-meta">SYSTEM // ${new Date().toLocaleTimeString()}</div></div>`;

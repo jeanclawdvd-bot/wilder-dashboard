@@ -1,30 +1,37 @@
 {
-  "synced_at": "2026-03-20T22:00:00.490018+00:00",
+  "synced_at": "2026-03-20T23:59:56.607441+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4378572,
     "videos": 9,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-20T22:00:01.025913+00:00",
+    "synced_at": "2026-03-20T23:59:57.062308+00:00",
     "recent_videos": [
       {
         "title": "Welcome to the future of gaming.",
-        "views": 321,
+        "views": 322,
         "likes": 12,
         "comments": 0,
         "published": "2025-10-28T16:58:09Z"
       },
       {
         "title": "This is what happens when reality and gaming collide.",
-        "views": 593,
+        "views": 594,
         "likes": 43,
         "comments": 0,
         "published": "2025-10-22T17:26:17Z"
       },
       {
+        "title": "Super Early Access is now LIVE",
+        "views": 1880,
+        "likes": 20,
+        "comments": 1,
+        "published": "2025-10-17T18:48:58Z"
+      },
+      {
         "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
-        "views": 3333740,
+        "views": 3333746,
         "likes": 19967,
         "comments": 7977,
         "published": "2024-12-22T00:00:06Z"
@@ -35,29 +42,39 @@
         "likes": 3517,
         "comments": 1797,
         "published": "2024-11-21T20:11:33Z"
-      },
-      {
-        "title": "Wilder World GENs Trailer",
-        "views": 38736,
-        "likes": 347,
-        "comments": 404,
-        "published": "2023-03-14T16:24:18Z"
       }
     ],
-    "recent_views_total": 3476942,
-    "top_video_views": 3333740
+    "recent_views_total": 3440094,
+    "top_video_views": 3333746
   },
   "tiktok": {
-    "error": "HTTP Error 403: Forbidden",
-    "synced_at": "2026-03-20T22:00:02.006442+00:00"
+    "followers": 8063,
+    "likes": 102800,
+    "videos": 126,
+    "following": 400,
+    "verified": false,
+    "username": "Wilder World",
+    "synced_at": "2026-03-21T00:00:09.932448+00:00"
   },
   "x": {
-    "error": "HTTP Error 403: Forbidden",
-    "synced_at": "2026-03-20T22:00:02.311714+00:00"
+    "followers": 249707,
+    "following": 958,
+    "tweets": 43136,
+    "likes": 160620,
+    "listed": 961,
+    "verified": false,
+    "username": "WilderWorld",
+    "name": "Wilder World",
+    "synced_at": "2026-03-21T00:00:20.858819+00:00"
   },
   "instagram": {
-    "error": "HTTP Error 403: Forbidden",
-    "synced_at": "2026-03-20T22:00:02.599592+00:00"
+    "followers": 167835,
+    "following": 485,
+    "posts": 637,
+    "verified": true,
+    "username": "wilder.world",
+    "fullName": "Wilder World",
+    "synced_at": "2026-03-21T00:00:31.123562+00:00"
   },
   "dau": {
     "today": 54,
@@ -70,15 +87,30 @@
       "2026.03.19": 62,
       "2026.03.20": 54
     },
-    "synced_at": "2026-03-20T22:00:03.970126+00:00"
+    "synced_at": "2026-03-21T00:00:32.460891+00:00"
   },
   "pack_sales": {
     "error": "server offline",
-    "synced_at": "2026-03-20T22:00:13.974053+00:00"
+    "synced_at": "2026-03-21T00:00:42.464240+00:00"
   },
   "ga": {
-    "error": "No module named 'cryptography'",
-    "synced_at": "2026-03-20T22:00:13.977558+00:00"
+    "today": {
+      "sessions": 2891,
+      "users": 2483,
+      "new_users": 2362,
+      "pageviews": 3337,
+      "bounce_rate": 49.3,
+      "avg_session": 121.6
+    },
+    "week": {
+      "sessions": 133,
+      "users": 106,
+      "new_users": 87,
+      "pageviews": 145,
+      "bounce_rate": 52.6,
+      "avg_session": 127.0
+    },
+    "synced_at": "2026-03-21T00:00:43.588587+00:00"
   },
   "email": {},
   "history": {
@@ -106,11 +138,11 @@
       7877,
       7877,
       7831,
-      7884
+      7884,
+      8063
     ],
     "ig": [],
     "x": [
-      250088,
       250089,
       249942,
       249963,
@@ -139,7 +171,8 @@
       249757,
       249790,
       249707,
-      249743
+      249743,
+      249707
     ],
     "yt": [
       25100,
@@ -202,6 +235,7 @@
       57,
       62,
       42,
+      54,
       54
     ]
   }
