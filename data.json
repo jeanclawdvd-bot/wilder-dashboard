@@ -1,16 +1,16 @@
 {
-  "synced_at": "2026-03-21T21:47:48.226477+00:00",
+  "synced_at": "2026-03-21T22:00:46.451361+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4379771,
     "videos": 10,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-21T17:42:43.049566+00:00",
+    "synced_at": "2026-03-21T22:00:01.860233+00:00",
     "recent_videos": [
       {
         "title": "Wiami never sleeps \ud83c\udf06 | Wilder World Super Early Access",
-        "views": 1229,
+        "views": 1262,
         "likes": 6,
         "comments": 0,
         "published": "2026-03-21T01:36:50Z"
@@ -38,50 +38,50 @@
       },
       {
         "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
-        "views": 3333791,
+        "views": 3333797,
         "likes": 19969,
         "comments": 7978,
         "published": "2024-12-22T00:00:06Z"
       }
     ],
-    "recent_views_total": 3337821,
-    "top_video_views": 3333791
+    "recent_views_total": 3337860,
+    "top_video_views": 3333797
   },
   "tiktok": {
-    "followers": 8084,
-    "likes": 105000,
-    "videos": 126,
+    "followers": 8083,
+    "likes": 105700,
+    "videos": 127,
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T17:42:58.953429+00:00",
+    "synced_at": "2026-03-21T22:00:12.481875+00:00",
     "views": 0,
     "comments": 0,
     "shares": 0,
     "mc_followers": 0
   },
   "x": {
-    "followers": 249705,
+    "followers": 249708,
     "following": 959,
-    "tweets": 43138,
+    "tweets": 43139,
     "likes": 160605,
     "listed": 961,
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T17:43:05.047975+00:00",
+    "synced_at": "2026-03-21T22:00:25.849294+00:00",
     "retweets": 5,
     "mentions": 0,
     "mc_followers": 0
   },
   "instagram": {
-    "followers": 167813,
+    "followers": 167811,
     "following": 485,
     "posts": 637,
     "verified": true,
     "username": "wilder.world",
     "fullName": "Wilder World",
-    "synced_at": "2026-03-21T17:43:10.539649+00:00",
+    "synced_at": "2026-03-21T22:00:32.598753+00:00",
     "impressions": 0,
     "reach": 0,
     "engagement": 0,
@@ -239,10 +239,10 @@
         ]
       }
     },
-    "synced_at": "2026-03-21T17:43:23.799993+00:00"
+    "synced_at": "2026-03-21T22:00:46.451268+00:00"
   },
   "dau": {
-    "today": 65,
+    "today": 73,
     "history": {
       "2026.03.15": 69,
       "2026.03.16": 77,
@@ -250,17 +250,17 @@
       "2026.03.18": 63,
       "2026.03.19": 62,
       "2026.03.20": 34,
-      "2026.03.21": 65
+      "2026.03.21": 73
     },
-    "synced_at": "2026-03-21T17:43:24.266168+00:00"
+    "synced_at": "2026-03-21T22:00:47.816687+00:00"
   },
   "pack_sales": {
-    "today": 27,
-    "total_7d": 475,
-    "total_30d": 5170,
-    "total_sold_alltime": 9352,
-    "total_burned_alltime": 4497,
-    "in_circulation": 4855,
+    "today": 35,
+    "total_7d": 483,
+    "total_30d": 5178,
+    "total_sold_alltime": 9348,
+    "total_burned_alltime": 4507,
+    "in_circulation": 4841,
     "daily": [
       {
         "date": "2026-02-18",
@@ -419,347 +419,141 @@
       },
       {
         "date": "2026-03-21",
-        "totalSold": 27,
-        "totalBurned": 15
+        "totalSold": 35,
+        "totalBurned": 26
       }
     ],
     "source": "zchain",
-    "synced_at": "2026-03-21T17:43:27.622220+00:00"
+    "synced_at": "2026-03-21T22:00:51.590564+00:00"
   },
   "ga": {
-    "today": {
-      "sessions": 102,
-      "users": 86,
-      "new_users": 73,
-      "pageviews": 104,
-      "bounce_rate": 52.0,
-      "avg_session": 73.7
-    },
-    "week": {
-      "sessions": 2835,
-      "users": 2442,
-      "new_users": 2322,
-      "pageviews": 3245,
-      "bounce_rate": 48.7,
-      "avg_session": 121.7
-    },
-    "last_week": {
-      "sessions": 1239,
-      "users": 932,
-      "new_users": 861,
-      "pageviews": 1361,
-      "bounce_rate": 58.3,
-      "avg_session": 118.6
-    },
-    "daily_history": [
-      {
-        "date": "2026-02-20",
-        "sessions": 153,
-        "users": 115,
-        "pageviews": 170
-      },
-      {
-        "date": "2026-02-21",
-        "sessions": 115,
-        "users": 98,
-        "pageviews": 133
-      },
-      {
-        "date": "2026-02-22",
-        "sessions": 164,
-        "users": 133,
-        "pageviews": 176
-      },
-      {
-        "date": "2026-02-23",
-        "sessions": 157,
-        "users": 124,
-        "pageviews": 155
-      },
-      {
-        "date": "2026-02-24",
-        "sessions": 589,
-        "users": 505,
-        "pageviews": 655
-      },
-      {
-        "date": "2026-02-25",
-        "sessions": 448,
-        "users": 367,
-        "pageviews": 506
-      },
-      {
-        "date": "2026-02-26",
-        "sessions": 378,
-        "users": 301,
-        "pageviews": 419
-      },
-      {
-        "date": "2026-02-27",
-        "sessions": 291,
-        "users": 227,
-        "pageviews": 319
-      },
-      {
-        "date": "2026-02-28",
-        "sessions": 329,
-        "users": 272,
-        "pageviews": 356
-      },
-      {
-        "date": "2026-03-01",
-        "sessions": 349,
-        "users": 283,
-        "pageviews": 386
-      },
-      {
-        "date": "2026-03-02",
-        "sessions": 228,
-        "users": 158,
-        "pageviews": 246
-      },
-      {
-        "date": "2026-03-03",
-        "sessions": 244,
-        "users": 199,
-        "pageviews": 276
-      },
-      {
-        "date": "2026-03-04",
-        "sessions": 244,
-        "users": 184,
-        "pageviews": 261
-      },
-      {
-        "date": "2026-03-05",
-        "sessions": 257,
-        "users": 208,
-        "pageviews": 283
-      },
-      {
-        "date": "2026-03-06",
-        "sessions": 299,
-        "users": 241,
-        "pageviews": 330
-      },
-      {
-        "date": "2026-03-07",
-        "sessions": 293,
-        "users": 234,
-        "pageviews": 319
-      },
-      {
-        "date": "2026-03-08",
-        "sessions": 200,
-        "users": 157,
-        "pageviews": 220
-      },
-      {
-        "date": "2026-03-09",
-        "sessions": 191,
-        "users": 151,
-        "pageviews": 201
-      },
-      {
-        "date": "2026-03-10",
-        "sessions": 165,
-        "users": 120,
-        "pageviews": 180
-      },
-      {
-        "date": "2026-03-11",
-        "sessions": 194,
-        "users": 151,
-        "pageviews": 218
-      },
-      {
-        "date": "2026-03-12",
-        "sessions": 159,
-        "users": 123,
-        "pageviews": 178
-      },
-      {
-        "date": "2026-03-13",
-        "sessions": 186,
-        "users": 150,
-        "pageviews": 199
-      },
-      {
-        "date": "2026-03-14",
-        "sessions": 144,
-        "users": 106,
-        "pageviews": 165
-      },
-      {
-        "date": "2026-03-15",
-        "sessions": 162,
-        "users": 119,
-        "pageviews": 170
-      },
-      {
-        "date": "2026-03-16",
-        "sessions": 582,
-        "users": 534,
-        "pageviews": 637
-      },
-      {
-        "date": "2026-03-17",
-        "sessions": 925,
-        "users": 814,
-        "pageviews": 1056
-      },
-      {
-        "date": "2026-03-18",
-        "sessions": 498,
-        "users": 430,
-        "pageviews": 566
-      },
-      {
-        "date": "2026-03-19",
-        "sessions": 371,
-        "users": 315,
-        "pageviews": 399
-      },
-      {
-        "date": "2026-03-20",
-        "sessions": 276,
-        "users": 239,
-        "pageviews": 313
-      },
-      {
-        "date": "2026-03-21",
-        "sessions": 102,
-        "users": 86,
-        "pageviews": 104
-      }
-    ],
-    "synced_at": "2026-03-21T21:47:48.226477+00:00"
+    "error": "No module named 'cryptography'",
+    "synced_at": "2026-03-21T22:00:51.594816+00:00"
   },
   "zchain": {
-    "total_transactions": 9815332,
+    "total_transactions": 9883759,
     "transactions_today": 5974,
-    "total_addresses": 27201,
-    "total_blocks": 20524799,
+    "total_addresses": 27207,
+    "total_blocks": 20538686,
     "gas_used_today": "356859935",
-    "avg_block_time_ms": 1030.0,
+    "avg_block_time_ms": 1182.0,
     "recent_txns": [
       {
-        "hash": "0x1601391128c3565b72",
-        "hash_full": "0x1601391128c3565b723c7088c1e0f3d751b0e5f53ab4a42cb9d80c1d62da866f",
+        "hash": "0xdfd33438dbfb92263b",
+        "hash_full": "0xdfd33438dbfb92263bc68bd98a2fd91bec999cbadb64a80d0836e88728ca7cb9",
         "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
-        "value": "0",
-        "from": "0x77b255682D",
-        "to": "0xa48e67e832",
-        "block": 20524909
-      },
-      {
-        "hash": "0xfb7106a9acf3799eaa",
-        "hash_full": "0xfb7106a9acf3799eaacb73c0edce2abb3a9942039ba6a9a4bfbca2a14c4ecfcc",
-        "method": "mint",
-        "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
-        "value": "0",
-        "from": "0xF5e3401b3B",
-        "to": "0xa48e67e832",
-        "block": 20524909
-      },
-      {
-        "hash": "0x492ccf2e3be3e752a8",
-        "hash_full": "0x492ccf2e3be3e752a865d44352ca79f3286a3f484685e39a2cffebf7386d38bb",
-        "method": "mint",
-        "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
+        "timestamp": "2026-03-21T22:00:50.000000Z",
         "value": "0",
         "from": "0x3281ccE526",
         "to": "0xa48e67e832",
-        "block": 20524909
+        "block": 20538809
       },
       {
-        "hash": "0xa67a64999420f7ad69",
-        "hash_full": "0xa67a64999420f7ad69c63da0ccf96e8a5bbba78efabc058bdc42ed9f4bd3c512",
+        "hash": "0x07938565caaf8b9ad6",
+        "hash_full": "0x07938565caaf8b9ad6305e54f3d686c3b331db788dc3db1376d52048c30aa075",
         "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
+        "timestamp": "2026-03-21T22:00:50.000000Z",
         "value": "0",
         "from": "0x365e320345",
         "to": "0xa48e67e832",
-        "block": 20524909
+        "block": 20538809
       },
       {
-        "hash": "0x7c79ee38d01ad25b56",
-        "hash_full": "0x7c79ee38d01ad25b567299f5707d5b1785b8a89f9e05c3f12dfdc6cb99629a0c",
+        "hash": "0x5862387bdfa5bab732",
+        "hash_full": "0x5862387bdfa5bab732eb6f3320ca62c34f6dae7187d3294d991720687d4ce44d",
         "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
+        "timestamp": "2026-03-21T22:00:49.000000Z",
         "value": "0",
-        "from": "0x15c0C6eff3",
+        "from": "0x77b255682D",
         "to": "0xa48e67e832",
-        "block": 20524909
+        "block": 20538808
       },
       {
-        "hash": "0xc962c20a3e76979ff2",
-        "hash_full": "0xc962c20a3e76979ff23c0fa7f29918963efe9240fc8aa7e4c42f0f4bf5f9ee9b",
+        "hash": "0xfe8fd7704c9143d353",
+        "hash_full": "0xfe8fd7704c9143d3535b81c77f109e6ba1ccfd5bc4b836516d64fa34bc2d9742",
         "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
-        "value": "0",
-        "from": "0x1d8AB3dF80",
-        "to": "0xa48e67e832",
-        "block": 20524909
-      },
-      {
-        "hash": "0xdd4f536ea0bb1a3f7c",
-        "hash_full": "0xdd4f536ea0bb1a3f7ce75c1bb058f2d05177cf7a7b0771467002cc0ca539b888",
-        "method": "mint",
-        "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
-        "value": "0",
-        "from": "0x7f1382A18C",
-        "to": "0xa48e67e832",
-        "block": 20524909
-      },
-      {
-        "hash": "0x8c0ceef2406efeb197",
-        "hash_full": "0x8c0ceef2406efeb19735135211821ee6a0a3003a10af8351cdb24d9dd966d1db",
-        "method": "mint",
-        "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
+        "timestamp": "2026-03-21T22:00:48.000000Z",
         "value": "0",
         "from": "0xEc0958a2c0",
         "to": "0xa48e67e832",
-        "block": 20524909
+        "block": 20538807
       },
       {
-        "hash": "0x34bb5fc0181297dae9",
-        "hash_full": "0x34bb5fc0181297dae94bbf1f7a9ce3bd8b4abda4d149ebe5e1776f53888cf6d2",
+        "hash": "0x2df4598fef47ed6a18",
+        "hash_full": "0x2df4598fef47ed6a187938351b658e6c06b0a9ccb4fdf542f71971558c84b677",
         "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-21T17:43:16.000000Z",
+        "timestamp": "2026-03-21T22:00:48.000000Z",
         "value": "0",
-        "from": "0xAFa257FFBc",
+        "from": "0xF5e3401b3B",
         "to": "0xa48e67e832",
-        "block": 20524909
+        "block": 20538807
       },
       {
-        "hash": "0xc098e4509a7eefd8a2",
-        "hash_full": "0xc098e4509a7eefd8a2bdf510621142275a19423161369b44bd250a7f91699a46",
+        "hash": "0x7d36e72caca5e02a3e",
+        "hash_full": "0x7d36e72caca5e02a3e095c4ec1ef3d8db7cd10adb46ca2760ace0f4979be7128",
         "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-21T17:43:15.000000Z",
+        "timestamp": "2026-03-21T22:00:47.000000Z",
         "value": "0",
-        "from": "0xe92FBE40c1",
+        "from": "0x53A55d816e",
         "to": "0xa48e67e832",
-        "block": 20524908
+        "block": 20538806
+      },
+      {
+        "hash": "0xd3cd2a8f50a6038a07",
+        "hash_full": "0xd3cd2a8f50a6038a0745a0a38d344f5b7a47085163407c3696a7080aacbedad2",
+        "method": "mint",
+        "status": "ok",
+        "timestamp": "2026-03-21T22:00:47.000000Z",
+        "value": "0",
+        "from": "0x3281ccE526",
+        "to": "0xa48e67e832",
+        "block": 20538806
+      },
+      {
+        "hash": "0x379045c1df52f94d75",
+        "hash_full": "0x379045c1df52f94d75b7b53f363c6d4531dfa33a344f7564e7e159a3cb081b74",
+        "method": "mint",
+        "status": "ok",
+        "timestamp": "2026-03-21T22:00:44.000000Z",
+        "value": "0",
+        "from": "0x53A55d816e",
+        "to": "0xa48e67e832",
+        "block": 20538803
+      },
+      {
+        "hash": "0x9449564eadb5698fb6",
+        "hash_full": "0x9449564eadb5698fb6d1ad1a0c45d457b67d0335c5de9d3b622ac7e3277855a0",
+        "method": "mint",
+        "status": "ok",
+        "timestamp": "2026-03-21T22:00:43.000000Z",
+        "value": "0",
+        "from": "0x77b255682D",
+        "to": "0xa48e67e832",
+        "block": 20538802
+      },
+      {
+        "hash": "0xe1b4d19ce2d2494622",
+        "hash_full": "0xe1b4d19ce2d2494622cbcdc9fe605cff8bd5d0dd91a5bb9c92857dab4d491e95",
+        "method": "mint",
+        "status": "ok",
+        "timestamp": "2026-03-21T22:00:43.000000Z",
+        "value": "0",
+        "from": "0x3281ccE526",
+        "to": "0xa48e67e832",
+        "block": 20538802
       }
     ],
-    "synced_at": "2026-03-21T17:43:31.025365+00:00"
+    "synced_at": "2026-03-21T22:00:53.614462+00:00"
   },
   "email": {},
   "history": {
     "tt": [
-      7806,
       7807,
       7807,
       7808,
@@ -788,11 +582,11 @@
       8015,
       8024,
       8031,
-      8084
+      8084,
+      8083
     ],
     "ig": [],
     "x": [
-      249865,
       249887,
       249804,
       249838,
@@ -821,7 +615,8 @@
       249702,
       249703,
       249709,
-      249705
+      249705,
+      249708
     ],
     "yt": [
       25100,
@@ -856,7 +651,6 @@
       25100
     ],
     "dau": [
-      53,
       69,
       69,
       52,
@@ -885,7 +679,8 @@
       34,
       44,
       61,
-      65
+      65,
+      73
     ]
   }
 }
