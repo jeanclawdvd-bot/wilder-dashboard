@@ -675,7 +675,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   <button class="mnav-btn" onclick="switchTabMobile('ig',this)"><span class="mnav-icon" style="color:var(--ig)">◎</span><span>IG</span></button>
   <button class="mnav-btn" onclick="switchTabMobile('tiktok',this)"><span class="mnav-icon" style="color:var(--tiktok)">♪</span><span>TT</span></button>
   <button class="mnav-btn" onclick="switchTabMobile('youtube',this)"><span class="mnav-icon" style="color:var(--yt)">▶</span><span>YT</span></button>
-  <button class="mnav-btn" onclick="switchTabMobile('website',this)"><span class="mnav-icon">◈</span><span>WEB</span></button>
 </nav>
 
 <script>
@@ -1106,6 +1105,17 @@ function makeChart(canvasId,timeline,color,label,range,type='line'){
   chCharts[canvasId]=new Chart(canvas.getContext('2d'),cfg);
 }
 
+/* Sum all values in a filtered timeline for KPI totals */
+function tlSum(timeline,range){
+  const filtered=filterByRange(timeline||[],range);
+  return filtered.reduce((s,p)=>s+p.value,0);
+}
+/* Last value in filtered timeline (for follower counts) */
+function tlLast(timeline,range,fallback){
+  const filtered=filterByRange(timeline||[],range);
+  return filtered.length?filtered[filtered.length-1].value:(fallback||0);
+}
+
 function renderChannelTab(ch){
   const mc=state.platforms.mc||{};
   const r=chRanges[ch]||'7d';
@@ -1114,11 +1124,11 @@ function renderChannelTab(ch){
     const xd=mc.x||{};
     const tl=xd.timeline||{};
     document.getElementById('x-kpi-followers').textContent=fmt(state.platforms.x.followers||xd.followers||0);
-    document.getElementById('x-kpi-impressions').textContent=fmt(xd.impressions||0);
-    document.getElementById('x-kpi-engagements').textContent=fmt(xd.engagements||0);
-    document.getElementById('x-kpi-likes').textContent=fmt(xd.likes||0);
-    document.getElementById('x-kpi-retweets').textContent=fmt(xd.retweets||0);
-    document.getElementById('x-kpi-mentions').textContent=fmt(xd.mentions||0);
+    document.getElementById('x-kpi-impressions').textContent=fmt(tlSum(tl.impressions,r));
+    document.getElementById('x-kpi-engagements').textContent=fmt(tlSum(tl.engagements,r));
+    document.getElementById('x-kpi-likes').textContent=fmt(tlSum(tl.likes,r));
+    document.getElementById('x-kpi-retweets').textContent=fmt(tlSum(tl.retweets,r));
+    document.getElementById('x-kpi-mentions').textContent=fmt(tlSum(tl.mentions,r));
     makeChart('x-chart',    tl.impressions,'#E7E7E7','Impressions',r);
     makeChart('x-eng-chart',tl.engagements,'#E7E7E7','Engagements',r,'bar');
     makeChart('x-lr-chart', tl.likes,      '#FF6434','Likes',r,'bar');
@@ -1129,11 +1139,11 @@ function renderChannelTab(ch){
     const igd=mc.instagram||{};
     const tl=igd.timeline||{};
     document.getElementById('ig-kpi-followers').textContent=fmt(state.platforms.ig.followers||igd.followers||0);
-    document.getElementById('ig-kpi-impressions').textContent=fmt(igd.impressions||0);
-    document.getElementById('ig-kpi-reach').textContent=fmt(igd.reach||0);
-    document.getElementById('ig-kpi-engagement').textContent=fmt(igd.engagement||0);
-    document.getElementById('ig-kpi-likes').textContent=fmt(igd.likes||0);
-    document.getElementById('ig-kpi-comments').textContent=fmt(igd.comments||0);
+    document.getElementById('ig-kpi-impressions').textContent=fmt(tlSum(tl.impressions,r));
+    document.getElementById('ig-kpi-reach').textContent=fmt(tlSum(tl.reach,r));
+    document.getElementById('ig-kpi-engagement').textContent=fmt(tlSum(tl.engagement,r));
+    document.getElementById('ig-kpi-likes').textContent=fmt(tlSum(tl.likes,r));
+    document.getElementById('ig-kpi-comments').textContent=fmt(tlSum(tl.comments,r));
     makeChart('ig-chart',      tl.impressions,'#E1306C','Impressions',r);
     makeChart('ig-reach-chart',tl.reach,      '#E1306C','Reach',r);
     makeChart('ig-eng-chart',  tl.engagement, '#FF6434','Engagement',r,'bar');
@@ -1145,15 +1155,14 @@ function renderChannelTab(ch){
     const tl=ttd.timeline||{};
     const ttBase=state.platforms.tt||{};
     document.getElementById('tt-kpi-followers').textContent=fmt(ttBase.followers||ttd.followers||0);
-    document.getElementById('tt-kpi-views').textContent=fmt(ttd.views||ttBase.likes||0);
-    document.getElementById('tt-kpi-likes').textContent=fmt(ttd.likes||0);
-    document.getElementById('tt-kpi-comments').textContent=fmt(ttd.comments||0);
-    document.getElementById('tt-kpi-shares').textContent=fmt(ttd.shares||0);
-    const totalEng=(ttd.likes||0)+(ttd.comments||0)+(ttd.shares||0);
-    document.getElementById('tt-kpi-engage').textContent=fmt(totalEng);
-    makeChart('tt-chart',        tl.views,   '#FF0050','Views',r);
-    makeChart('tt-likes-chart',  tl.likes,   '#FF0050','Likes',r,'bar');
-    makeChart('tt-shares-chart', tl.shares,  '#FF6434','Shares',r,'bar');
+    document.getElementById('tt-kpi-views').textContent=fmt(tlSum(tl.views,r));
+    document.getElementById('tt-kpi-likes').textContent=fmt(tlSum(tl.likes,r));
+    document.getElementById('tt-kpi-comments').textContent=fmt(tlSum(tl.comments,r));
+    document.getElementById('tt-kpi-shares').textContent=fmt(tlSum(tl.shares,r));
+    document.getElementById('tt-kpi-engage').textContent=fmt(tlSum(tl.likes,r)+tlSum(tl.comments,r)+tlSum(tl.shares,r));
+    makeChart('tt-chart',        tl.views,    '#FF0050','Views',r);
+    makeChart('tt-likes-chart',  tl.likes,    '#FF0050','Likes',r,'bar');
+    makeChart('tt-shares-chart', tl.shares,   '#FF6434','Shares',r,'bar');
     makeChart('tt-comments-chart',tl.comments,'#FF0050','Comments',r,'bar');
     makeChart('tt-fol-chart',    tl.followers,'#FF0050','Followers',r);
   }
