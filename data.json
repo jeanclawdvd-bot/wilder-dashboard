@@ -1,17 +1,17 @@
 {
-  "synced_at": "2026-03-21T06:49:00.356461+00:00",
+  "synced_at": "2026-03-21T06:55:50.498021+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4378599,
     "videos": 10,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-21T06:48:24.474748+00:00",
+    "synced_at": "2026-03-21T06:55:15.977555+00:00",
     "recent_videos": [
       {
         "title": "Wiami never sleeps \ud83c\udf06 | Wilder World Super Early Access",
-        "views": 1052,
-        "likes": 4,
+        "views": 1057,
+        "likes": 5,
         "comments": 0,
         "published": "2026-03-21T01:36:50Z"
       },
@@ -38,14 +38,14 @@
       },
       {
         "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
-        "views": 3333753,
+        "views": 3333758,
         "likes": 19968,
         "comments": 7978,
         "published": "2024-12-22T00:00:06Z"
       }
     ],
-    "recent_views_total": 3337604,
-    "top_video_views": 3333753
+    "recent_views_total": 3337614,
+    "top_video_views": 3333758
   },
   "tiktok": {
     "followers": 8015,
@@ -54,14 +54,14 @@
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T06:48:35.801986+00:00",
+    "synced_at": "2026-03-21T06:55:24.997882+00:00",
     "views": 0,
     "comments": 0,
     "shares": 0,
     "mc_followers": 0
   },
   "x": {
-    "followers": 249701,
+    "followers": 249702,
     "following": 959,
     "tweets": 43138,
     "likes": 160619,
@@ -69,7 +69,7 @@
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T06:48:41.790995+00:00",
+    "synced_at": "2026-03-21T06:55:32.846295+00:00",
     "retweets": 5,
     "mentions": 0,
     "mc_followers": 0
@@ -81,7 +81,7 @@
     "verified": true,
     "username": "wilder.world",
     "fullName": "Wilder World",
-    "synced_at": "2026-03-21T06:48:47.124336+00:00",
+    "synced_at": "2026-03-21T06:55:37.486488+00:00",
     "impressions": 0,
     "reach": 0,
     "engagement": 0,
@@ -231,7 +231,7 @@
         ]
       }
     },
-    "synced_at": "2026-03-21T06:49:00.356365+00:00"
+    "synced_at": "2026-03-21T06:55:50.497922+00:00"
   },
   "dau": {
     "today": 34,
@@ -244,18 +244,95 @@
       "2026.03.19": 62,
       "2026.03.20": 34
     },
-    "synced_at": "2026-03-21T06:49:01.400887+00:00"
+    "synced_at": "2026-03-21T06:55:51.725720+00:00"
   },
   "pack_sales": {
     "today": 33,
     "total_7d": 615,
-    "total_30d": 1936,
-    "total_burned_30d": 830,
+    "total_30d": 5258,
+    "total_sold_alltime": 9409,
+    "total_burned_alltime": 4501,
+    "in_circulation": 4908,
     "daily": [
       {
+        "date": "2026-02-18",
+        "totalSold": 52,
+        "totalBurned": 0
+      },
+      {
+        "date": "2026-02-19",
+        "totalSold": 129,
+        "totalBurned": 0
+      },
+      {
+        "date": "2026-02-20",
+        "totalSold": 91,
+        "totalBurned": 0
+      },
+      {
+        "date": "2026-02-21",
+        "totalSold": 130,
+        "totalBurned": 0
+      },
+      {
+        "date": "2026-02-22",
+        "totalSold": 132,
+        "totalBurned": 0
+      },
+      {
+        "date": "2026-02-23",
+        "totalSold": 139,
+        "totalBurned": 21
+      },
+      {
+        "date": "2026-02-24",
+        "totalSold": 430,
+        "totalBurned": 969
+      },
+      {
+        "date": "2026-02-25",
+        "totalSold": 309,
+        "totalBurned": 982
+      },
+      {
+        "date": "2026-02-26",
+        "totalSold": 210,
+        "totalBurned": 398
+      },
+      {
+        "date": "2026-02-27",
+        "totalSold": 200,
+        "totalBurned": 336
+      },
+      {
+        "date": "2026-02-28",
+        "totalSold": 200,
+        "totalBurned": 199
+      },
+      {
+        "date": "2026-03-01",
+        "totalSold": 200,
+        "totalBurned": 180
+      },
+      {
+        "date": "2026-03-02",
+        "totalSold": 300,
+        "totalBurned": 201
+      },
+      {
+        "date": "2026-03-03",
+        "totalSold": 300,
+        "totalBurned": 142
+      },
+      {
+        "date": "2026-03-04",
+        "totalSold": 265,
+        "totalBurned": 99
+      },
+      {
         "date": "2026-03-05",
-        "totalSold": 44,
-        "totalBurned": 108
+        "totalSold": 279,
+        "totalBurned": 252
       },
       {
         "date": "2026-03-06",
@@ -334,32 +411,32 @@
       }
     ],
     "source": "zchain",
-    "synced_at": "2026-03-21T06:49:36.220773+00:00"
+    "synced_at": "2026-03-21T06:58:34.748020+00:00"
   },
   "ga": {
     "today": {
-      "sessions": 200,
-      "users": 171,
-      "new_users": 139,
-      "pageviews": 225,
-      "bounce_rate": 48.5,
-      "avg_session": 118.9
+      "sessions": 201,
+      "users": 172,
+      "new_users": 140,
+      "pageviews": 226,
+      "bounce_rate": 48.3,
+      "avg_session": 118.4
     },
     "week": {
-      "sessions": 2793,
-      "users": 2405,
-      "new_users": 2280,
-      "pageviews": 3218,
+      "sessions": 2795,
+      "users": 2406,
+      "new_users": 2281,
+      "pageviews": 3219,
       "bounce_rate": 49.1,
-      "avg_session": 122.8
+      "avg_session": 122.7
     },
-    "synced_at": "2026-03-21T06:49:38.470115+00:00"
+    "synced_at": "2026-03-21T06:58:36.385496+00:00"
   },
   "zchain": {
     "total_transactions": 9738096,
     "transactions_today": 5974,
     "total_addresses": 27177,
-    "total_blocks": 20489244,
+    "total_blocks": 20489752,
     "gas_used_today": "356859935",
     "avg_block_time_ms": 1040.0,
     "recent_txns": [
@@ -474,12 +551,11 @@
         "block": 20477245
       }
     ],
-    "synced_at": "2026-03-21T06:49:40.967203+00:00"
+    "synced_at": "2026-03-21T06:58:39.156719+00:00"
   },
   "email": {},
   "history": {
     "tt": [
-      7834,
       7790,
       7845,
       7801,
@@ -508,11 +584,11 @@
       8064,
       8014,
       8015,
+      8015,
       8015
     ],
     "ig": [],
     "x": [
-      249874,
       249892,
       249894,
       249875,
@@ -541,7 +617,8 @@
       249710,
       249712,
       249701,
-      249701
+      249701,
+      249702
     ],
     "yt": [
       25100,
@@ -576,7 +653,6 @@
       25100
     ],
     "dau": [
-      94,
       57,
       69,
       66,
@@ -602,6 +678,7 @@
       45,
       45,
       45,
+      34,
       34,
       34,
       34,

@@ -412,11 +412,19 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
             <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:8px;text-align:center">
               <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink)" id="pack-sales-7d">—</div>
-              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">7-DAY</div>
+              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">7-DAY SOLD</div>
             </div>
             <div style="background:rgba(255,45,135,0.04);border:1px solid var(--border);padding:8px;text-align:center">
               <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink)" id="pack-sales-30d">—</div>
-              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">30-DAY</div>
+              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">30-DAY SOLD</div>
+            </div>
+            <div style="background:rgba(255,45,135,0.06);border:1px solid rgba(255,45,135,0.2);padding:8px;text-align:center">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink)" id="pack-sales-alltime">—</div>
+              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">ALL-TIME SOLD</div>
+            </div>
+            <div style="background:rgba(255,45,135,0.06);border:1px solid rgba(255,45,135,0.2);padding:8px;text-align:center">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--orange)" id="pack-burned-alltime">—</div>
+              <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text);letter-spacing:1px">ALL-TIME OPENED</div>
             </div>
           </div>
         </div>
@@ -871,6 +879,9 @@ function renderData(data){
     if(el) el.textContent=fmt(ps.today||0);
     if(el7) el7.textContent=fmt(ps.total_7d||0);
     if(el30) el30.textContent=fmt(ps.total_30d||0);
+    const elAt=document.getElementById('pack-sales-alltime'),elBu=document.getElementById('pack-burned-alltime');
+    if(elAt) elAt.textContent=fmt(ps.total_sold_alltime||0);
+    if(elBu) elBu.textContent=fmt(ps.total_burned_alltime||0);
     if(st){st.textContent='● LIVE';st.className='metric-delta up';}
   }
 
