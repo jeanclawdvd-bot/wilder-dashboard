@@ -1320,9 +1320,9 @@ function renderFunnel(data) {
   // Week label
   const now = new Date();
   const weekStart = new Date(now); weekStart.setDate(now.getDate() - 6);
-  const fmt = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+  const fmtDate = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
   const el = document.getElementById('funnel-week-label');
-  if (el) el.textContent = `// ${fmt(weekStart)} — ${fmt(now)}`;
+  if (el) el.textContent = `// ${fmtDate(weekStart)} — ${fmtDate(now)}`;
 
   // ── Follower summary row ──
   const s = (id, v) => { const e=document.getElementById(id); if(e) e.textContent=fmt2(v); };
