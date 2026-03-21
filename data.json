@@ -1,12 +1,12 @@
 {
-  "synced_at": "2026-03-20T23:59:56.607441+00:00",
+  "synced_at": "2026-03-21T00:59:59.532221+00:00",
   "youtube": {
     "subscribers": 25100,
     "views": 4378572,
     "videos": 9,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-20T23:59:57.062308+00:00",
+    "synced_at": "2026-03-21T00:57:15.725232+00:00",
     "recent_videos": [
       {
         "title": "Welcome to the future of gaming.",
@@ -25,13 +25,13 @@
       {
         "title": "Super Early Access is now LIVE",
         "views": 1880,
-        "likes": 20,
+        "likes": 21,
         "comments": 1,
         "published": "2025-10-17T18:48:58Z"
       },
       {
         "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
-        "views": 3333746,
+        "views": 3333745,
         "likes": 19967,
         "comments": 7977,
         "published": "2024-12-22T00:00:06Z"
@@ -44,40 +44,72 @@
         "published": "2024-11-21T20:11:33Z"
       }
     ],
-    "recent_views_total": 3440094,
-    "top_video_views": 3333746
+    "recent_views_total": 3440093,
+    "top_video_views": 3333745
   },
   "tiktok": {
-    "followers": 8063,
-    "likes": 102800,
+    "followers": 8012,
+    "likes": 103000,
     "videos": 126,
     "following": 400,
     "verified": false,
     "username": "Wilder World",
-    "synced_at": "2026-03-21T00:00:09.932448+00:00"
+    "synced_at": "2026-03-21T00:57:23.726913+00:00",
+    "views": 0,
+    "comments": 0,
+    "shares": 0,
+    "mc_followers": 0
   },
   "x": {
-    "followers": 249707,
-    "following": 958,
-    "tweets": 43136,
+    "followers": 249710,
+    "following": 959,
+    "tweets": 43138,
     "likes": 160620,
     "listed": 961,
     "verified": false,
     "username": "WilderWorld",
     "name": "Wilder World",
-    "synced_at": "2026-03-21T00:00:20.858819+00:00"
+    "synced_at": "2026-03-21T00:57:32.592987+00:00",
+    "retweets": 0,
+    "mentions": 0,
+    "mc_followers": 0
   },
   "instagram": {
-    "followers": 167835,
-    "following": 485,
-    "posts": 637,
-    "verified": true,
-    "username": "wilder.world",
-    "fullName": "Wilder World",
-    "synced_at": "2026-03-21T00:00:31.123562+00:00"
+    "error": "The read operation timed out",
+    "synced_at": "2026-03-21T00:59:47.798593+00:00"
+  },
+  "metricool": {
+    "instagram": {
+      "followers": 0,
+      "impressions": 0,
+      "reach": 0,
+      "engagement": 0,
+      "profile_views": 0,
+      "posts": 0,
+      "likes": 0,
+      "comments": 0,
+      "history": []
+    },
+    "tiktok": {
+      "followers": 0,
+      "likes": 0,
+      "views": 0,
+      "comments": 0,
+      "shares": 0,
+      "history": []
+    },
+    "x": {
+      "followers": 0,
+      "tweets": 0,
+      "retweets": 0,
+      "likes": 0,
+      "mentions": 0,
+      "history": []
+    },
+    "synced_at": "2026-03-21T00:59:59.532141+00:00"
   },
   "dau": {
-    "today": 54,
+    "today": 45,
     "history": {
       "2026.03.14": 66,
       "2026.03.15": 69,
@@ -85,32 +117,32 @@
       "2026.03.17": 66,
       "2026.03.18": 63,
       "2026.03.19": 62,
-      "2026.03.20": 54
+      "2026.03.20": 45
     },
-    "synced_at": "2026-03-21T00:00:32.460891+00:00"
+    "synced_at": "2026-03-21T01:00:01.001343+00:00"
   },
   "pack_sales": {
     "error": "server offline",
-    "synced_at": "2026-03-21T00:00:42.464240+00:00"
+    "synced_at": "2026-03-21T01:00:11.005824+00:00"
   },
   "ga": {
     "today": {
       "sessions": 2891,
-      "users": 2483,
-      "new_users": 2362,
-      "pageviews": 3337,
-      "bounce_rate": 49.3,
-      "avg_session": 121.6
+      "users": 2486,
+      "new_users": 2364,
+      "pageviews": 3342,
+      "bounce_rate": 49.2,
+      "avg_session": 121.7
     },
     "week": {
-      "sessions": 133,
-      "users": 106,
-      "new_users": 87,
-      "pageviews": 145,
-      "bounce_rate": 52.6,
-      "avg_session": 127.0
+      "sessions": 136,
+      "users": 109,
+      "new_users": 89,
+      "pageviews": 150,
+      "bounce_rate": 52.9,
+      "avg_session": 125.5
     },
-    "synced_at": "2026-03-21T00:00:43.588587+00:00"
+    "synced_at": "2026-03-21T01:00:11.416980+00:00"
   },
   "email": {},
   "history": {
@@ -139,12 +171,12 @@
       7877,
       7831,
       7884,
-      8063
+      8063,
+      8012,
+      8012
     ],
     "ig": [],
     "x": [
-      250089,
-      249942,
       249963,
       249853,
       249872,
@@ -172,7 +204,9 @@
       249790,
       249707,
       249743,
-      249707
+      249707,
+      249707,
+      249710
     ],
     "yt": [
       25100,
@@ -207,8 +241,6 @@
       25100
     ],
     "dau": [
-      97,
-      100,
       100,
       100,
       95,
@@ -236,7 +268,9 @@
       62,
       42,
       54,
-      54
+      54,
+      45,
+      45
     ]
   }
 }
