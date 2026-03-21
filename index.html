@@ -684,7 +684,9 @@ function checkPassword(){
   const val = document.getElementById('pw-input').value;
   if(val === '1'){
     sessionStorage.setItem('ww_auth','ww_ok');
-    document.getElementById('pw-screen').classList.add('hidden');
+    const pw=document.getElementById('pw-screen');
+    pw.classList.add('hidden');
+    pw.style.display='none';
     loadData();
   } else {
     const err = document.getElementById('pw-error');
@@ -696,7 +698,9 @@ function checkPassword(){
 }
 document.getElementById('pw-input').addEventListener('keydown', e=>{ if(e.key==='Enter') checkPassword(); });
 if(sessionStorage.getItem('ww_auth')==='ww_ok'){
-  document.getElementById('pw-screen').classList.add('hidden');
+  const pw=document.getElementById('pw-screen');
+  pw.classList.add('hidden');
+  pw.style.display='none';
 }
 
 /* ── TABS ── */
