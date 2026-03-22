@@ -1,16 +1,16 @@
 {
-  "synced_at": "2026-03-22T04:00:15.920115+00:00",
+  "synced_at": "2026-03-22T16:00:16.853058+00:00",
   "youtube": {
     "subscribers": 25100,
-    "views": 4379771,
+    "views": 4380016,
     "videos": 10,
     "channel_id": "UCgqus_DBpRevUyITHaOOrag",
     "channel_name": "Wilder World",
-    "synced_at": "2026-03-22T04:00:01.054419+00:00",
+    "synced_at": "2026-03-22T16:00:01.901672+00:00",
     "recent_videos": [
       {
         "title": "Wiami never sleeps \ud83c\udf06 | Wilder World Super Early Access",
-        "views": 1292,
+        "views": 1347,
         "likes": 6,
         "comments": 0,
         "published": "2026-03-21T01:36:50Z"
@@ -38,26 +38,26 @@
       },
       {
         "title": "Wilder World: Official Gameplay Trailer - The Metaverse",
-        "views": 3333807,
+        "views": 3333827,
         "likes": 19969,
-        "comments": 7978,
+        "comments": 7979,
         "published": "2024-12-22T00:00:06Z"
       }
     ],
-    "recent_views_total": 3337901,
-    "top_video_views": 3333807
+    "recent_views_total": 3337976,
+    "top_video_views": 3333827
   },
   "tiktok": {
     "error": "HTTP Error 403: Forbidden",
-    "synced_at": "2026-03-22T04:00:01.728109+00:00"
+    "synced_at": "2026-03-22T16:00:02.856073+00:00"
   },
   "x": {
     "error": "HTTP Error 403: Forbidden",
-    "synced_at": "2026-03-22T04:00:02.015825+00:00"
+    "synced_at": "2026-03-22T16:00:03.139874+00:00"
   },
   "instagram": {
     "error": "HTTP Error 403: Forbidden",
-    "synced_at": "2026-03-22T04:00:02.324779+00:00"
+    "synced_at": "2026-03-22T16:00:03.426356+00:00"
   },
   "metricool": {
     "instagram": {
@@ -72,37 +72,37 @@
       "timeline": {
         "followers": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "impressions": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "reach": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "engagement": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "likes": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "comments": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ]
@@ -117,31 +117,31 @@
       "timeline": {
         "followers": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "views": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "likes": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "comments": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "shares": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ]
@@ -149,36 +149,40 @@
     },
     "x": {
       "followers": 0,
-      "tweets": 1,
+      "tweets": 4,
       "retweets": 5,
       "likes": 11,
       "mentions": 0,
-      "impressions": 445,
+      "impressions": 451,
       "engagements": 0,
       "timeline": {
         "followers": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
         "impressions": [
           {
             "date": "2026-03-16",
-            "value": 445
+            "value": 451
           },
           {
             "date": "2026-03-17",
-            "value": 3479
+            "value": 3650
           },
           {
             "date": "2026-03-20",
-            "value": 618
+            "value": 2760
+          },
+          {
+            "date": "2026-03-21",
+            "value": 7429
           }
         ],
         "engagements": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ],
@@ -189,55 +193,62 @@
           },
           {
             "date": "2026-03-17",
-            "value": 83
+            "value": 86
           },
           {
             "date": "2026-03-20",
-            "value": 11
+            "value": 48
+          },
+          {
+            "date": "2026-03-21",
+            "value": 51
           }
         ],
         "retweets": [
           {
             "date": "2026-03-17",
             "value": 5
+          },
+          {
+            "date": "2026-03-20",
+            "value": 1
+          },
+          {
+            "date": "2026-03-21",
+            "value": 10
           }
         ],
         "mentions": [
           {
-            "date": "2026-03-21",
+            "date": "2026-03-22",
             "value": 0
           }
         ]
       }
     },
-    "synced_at": "2026-03-22T04:00:15.920041+00:00"
+    "synced_at": "2026-03-22T16:00:16.852990+00:00"
   },
   "dau": {
-    "today": 53,
+    "today": 57,
     "history": {
-      "2026.03.15": 69,
       "2026.03.16": 77,
       "2026.03.17": 66,
       "2026.03.18": 63,
       "2026.03.19": 62,
       "2026.03.20": 34,
-      "2026.03.21": 53
+      "2026.03.21": 53,
+      "2026.03.22": 57
     },
-    "synced_at": "2026-03-22T04:00:17.215677+00:00"
+    "synced_at": "2026-03-22T16:00:18.182262+00:00"
   },
   "pack_sales": {
-    "today": 35,
-    "total_7d": 352,
-    "total_30d": 5176,
-    "total_sold_alltime": 9334,
-    "total_burned_alltime": 4520,
-    "in_circulation": 4814,
+    "today": 12,
+    "total_7d": 322,
+    "total_30d": 5125,
+    "total_sold_alltime": 9304,
+    "total_burned_alltime": 4523,
+    "in_circulation": 4781,
     "daily": [
-      {
-        "date": "2026-02-18",
-        "totalSold": 21,
-        "totalBurned": 0
-      },
       {
         "date": "2026-02-19",
         "totalSold": 129,
@@ -380,7 +391,7 @@
       },
       {
         "date": "2026-03-19",
-        "totalSold": 52,
+        "totalSold": 10,
         "totalBurned": 10
       },
       {
@@ -395,137 +406,137 @@
       },
       {
         "date": "2026-03-22",
-        "totalSold": 0,
-        "totalBurned": 14
+        "totalSold": 12,
+        "totalBurned": 17
       }
     ],
     "source": "zchain",
-    "synced_at": "2026-03-22T04:00:20.495928+00:00"
+    "synced_at": "2026-03-22T16:00:22.099831+00:00"
   },
   "ga": {
     "error": "No module named 'cryptography'",
-    "synced_at": "2026-03-22T04:00:20.500021+00:00"
+    "synced_at": "2026-03-22T16:00:22.104075+00:00"
   },
   "zchain": {
-    "total_transactions": 9938055,
+    "total_transactions": 9992964,
     "transactions_today": 172052,
-    "total_addresses": 27215,
-    "total_blocks": 20557701,
+    "total_addresses": 27234,
+    "total_blocks": 20596090,
     "gas_used_today": "13738736836",
-    "avg_block_time_ms": 1131.0,
+    "avg_block_time_ms": 1091.0,
     "recent_txns": [
       {
-        "hash": "0xac8ce823e07aaf8a9b",
-        "hash_full": "0xac8ce823e07aaf8a9b943ab10970b65f69bb4f5f1660e1c2a7dd83305eb9b16b",
+        "hash": "0x7cfda8330086c282f0",
+        "hash_full": "0x7cfda8330086c282f077182c5d2a254ed2be82f338b7b3336ed892d21301efea",
         "method": "0x79cc6790",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:16.000000Z",
+        "timestamp": "2026-03-22T16:00:16.000000Z",
         "value": "0",
         "from": "0x23912d7433",
         "to": "0xD3C80f3Bc6",
-        "block": 20557857
+        "block": 20596193
       },
       {
-        "hash": "0x67407f38977d347bc1",
-        "hash_full": "0x67407f38977d347bc1198584eabf4181b1341d900c900c070e3973c37b4e1018",
+        "hash": "0xb2b7977a8d54c88db0",
+        "hash_full": "0xb2b7977a8d54c88db0380ac5345f526597fd541752190b4e343af429feadbbd3",
         "method": "0x79cc6790",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:15.000000Z",
+        "timestamp": "2026-03-22T16:00:15.000000Z",
         "value": "0",
         "from": "0x23912d7433",
         "to": "0xD3C80f3Bc6",
-        "block": 20557856
+        "block": 20596192
       },
       {
-        "hash": "0xdca0afdf3be65a63b4",
-        "hash_full": "0xdca0afdf3be65a63b49e170c71e5f132df4091a43befa2cea3093e2014516edf",
+        "hash": "0x7da7bb9b22534a9a27",
+        "hash_full": "0x7da7bb9b22534a9a271292e8a231547b0ba3744d238cd2d64d088adbf64dfaec",
         "method": "0x79cc6790",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:14.000000Z",
+        "timestamp": "2026-03-22T16:00:13.000000Z",
         "value": "0",
         "from": "0x23912d7433",
         "to": "0xD3C80f3Bc6",
-        "block": 20557855
+        "block": 20596190
       },
       {
-        "hash": "0xcbdf5e286960b42a0b",
-        "hash_full": "0xcbdf5e286960b42a0bd5e176940e02dbd378b18e4bdebe800f73cecf172c3008",
-        "method": "0x79cc6790",
+        "hash": "0xbf1788142e2d5c1415",
+        "hash_full": "0xbf1788142e2d5c1415760084ef4dfb70f06c94740bee19a2cd9195b2bd24dfd4",
+        "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:13.000000Z",
+        "timestamp": "2026-03-22T16:00:13.000000Z",
         "value": "0",
-        "from": "0x23912d7433",
-        "to": "0xD3C80f3Bc6",
-        "block": 20557854
+        "from": "0xB04adF5f16",
+        "to": "0xa48e67e832",
+        "block": 20596190
       },
       {
-        "hash": "0x0a94fe4c59b0b21fab",
-        "hash_full": "0x0a94fe4c59b0b21fab126e5ee0a92f8cc454f0afdc5c3dda08325b666f4dacc5",
-        "method": "0x79cc6790",
+        "hash": "0xb23bccafecd382af04",
+        "hash_full": "0xb23bccafecd382af04142a721d7e6e80935f756eb4548d4b84f387328e283743",
+        "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:12.000000Z",
+        "timestamp": "2026-03-22T16:00:12.000000Z",
         "value": "0",
-        "from": "0x23912d7433",
-        "to": "0xD3C80f3Bc6",
-        "block": 20557853
+        "from": "0x72001f6201",
+        "to": "0xa48e67e832",
+        "block": 20596189
       },
       {
-        "hash": "0xb919211565aaa84399",
-        "hash_full": "0xb919211565aaa84399c6f7909f3cf98e99a4e23894de9966c664ddc39ef477a5",
-        "method": "0x79cc6790",
+        "hash": "0xfe74fbefdee7168e0d",
+        "hash_full": "0xfe74fbefdee7168e0dfe1e20dfbc5717e2f3caaaad7a28aff9162374d87d15a5",
+        "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:11.000000Z",
+        "timestamp": "2026-03-22T16:00:12.000000Z",
         "value": "0",
-        "from": "0x23912d7433",
-        "to": "0xD3C80f3Bc6",
-        "block": 20557852
+        "from": "0x77b255682D",
+        "to": "0xa48e67e832",
+        "block": 20596189
       },
       {
-        "hash": "0x3a9f659f1b30783392",
-        "hash_full": "0x3a9f659f1b307833926352082423d822759150770a10509cbe2d78587527d2c3",
-        "method": "0x79cc6790",
+        "hash": "0x38a37597902c01eb15",
+        "hash_full": "0x38a37597902c01eb1519cdc3d9d00281ab59efa6e9157e487232f953a220778e",
+        "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:10.000000Z",
+        "timestamp": "2026-03-22T16:00:12.000000Z",
         "value": "0",
-        "from": "0x23912d7433",
-        "to": "0xD3C80f3Bc6",
-        "block": 20557851
+        "from": "0x1d8AB3dF80",
+        "to": "0xa48e67e832",
+        "block": 20596189
       },
       {
-        "hash": "0x855e0aaa8248906e75",
-        "hash_full": "0x855e0aaa8248906e753903b52c01e801fa5eea970ef178c9640b56346ab9cd74",
-        "method": "0x79cc6790",
+        "hash": "0x255bcd132f387d66eb",
+        "hash_full": "0x255bcd132f387d66eb257d5dff095b3bdac0b7cce979576077330de5342375ec",
+        "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:10.000000Z",
+        "timestamp": "2026-03-22T16:00:12.000000Z",
         "value": "0",
-        "from": "0x23912d7433",
-        "to": "0xD3C80f3Bc6",
-        "block": 20557851
+        "from": "0x3281ccE526",
+        "to": "0xa48e67e832",
+        "block": 20596189
       },
       {
-        "hash": "0xb4e425e0739536d0db",
-        "hash_full": "0xb4e425e0739536d0dbaed7c54c91700a3b3a1f352da5cc2db7ced06e3ea0bf2e",
-        "method": "0x79cc6790",
+        "hash": "0x9e8dca5e72deed770d",
+        "hash_full": "0x9e8dca5e72deed770d08348861bba92810bff3afc953b6031e4e6506e8f64e93",
+        "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:08.000000Z",
+        "timestamp": "2026-03-22T16:00:12.000000Z",
         "value": "0",
-        "from": "0x23912d7433",
-        "to": "0xD3C80f3Bc6",
-        "block": 20557850
+        "from": "0x15c0C6eff3",
+        "to": "0xa48e67e832",
+        "block": 20596189
       },
       {
-        "hash": "0x950052066304cbee0c",
-        "hash_full": "0x950052066304cbee0cd62ebcb56425b4796ed426adc6ef9bc0df3aef5cabf0f1",
-        "method": "0x79cc6790",
+        "hash": "0x999cabcf32a3120526",
+        "hash_full": "0x999cabcf32a3120526dabe0a98f05ec0edc13712c8db988991e35143d2eabcbb",
+        "method": "mint",
         "status": "ok",
-        "timestamp": "2026-03-22T04:00:07.000000Z",
+        "timestamp": "2026-03-22T16:00:11.000000Z",
         "value": "0",
-        "from": "0x23912d7433",
-        "to": "0xD3C80f3Bc6",
-        "block": 20557849
+        "from": "0x53A55d816e",
+        "to": "0xa48e67e832",
+        "block": 20596188
       }
     ],
-    "synced_at": "2026-03-22T04:00:22.577294+00:00"
+    "synced_at": "2026-03-22T16:00:24.146598+00:00"
   },
   "email": {},
   "history": {
@@ -627,7 +638,6 @@
       25100
     ],
     "dau": [
-      69,
       52,
       76,
       77,
@@ -656,7 +666,8 @@
       61,
       65,
       73,
-      53
+      53,
+      57
     ]
   }
 }
